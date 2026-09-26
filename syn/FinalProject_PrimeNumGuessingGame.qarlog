@@ -1,0 +1,68 @@
+Quartus Prime Archive log --	C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/FinalProject_PrimeNumGuessingGame.qarlog
+
+Archive:	C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/FinalProject_PrimeNumGuessingGame.qar
+Date:		Tue May 12 00:15:09 2026
+Quartus Prime		25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+
+	=========== Files Selected: ===========
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/AccessController.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/Authentication.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/ButtonShaper.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/DisplayController.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/FinalProject_PrimeNumGuessingGame.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/Hint7SegmentDecoder.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/ID_Checking_Module.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/LevelSelector.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/LoadRegister.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/My4BAdder.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/My7SegmentDisplay.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/OneDigitTimer.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/OneSecTimer.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/OnemsLFSRTimer.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/Password_Checking_Module.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/PlayerModule.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/PrimeChecker.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/PrimeGameController.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/PrimeLFSR.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/PrimeTargetGenerator.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/ROMAuthentication.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/RandomIndexLFSR.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/RandomNumberGenerator.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/ScoreBoardModule.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/ScoreTracking.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/ThreeDigitTimer.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/TwoDigitGuessInput.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/TwoDigitTimer.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/VerificationModule.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/countTo10Timer.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/hundredmsecTimer.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/src/msecTimer.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/FinalProject_PrimeNumGuessingGame.hex
+C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/FinalProject_PrimeNumGuessingGame.mif
+C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/FinalProject_PrimeNumGuessingGame.qpf
+C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/FinalProject_PrimeNumGuessingGame.qsf
+C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/Password_ROM.qip
+C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/Password_ROM.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/PlayerID_ROM.qip
+C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/PlayerID_ROM.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/PrimerNumbersROM.qip
+C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/PrimerNumbersROM.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/PrimerNumbersROM_bb.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/ROM_PSWD.qip
+C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/ROM_PSWD.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/ROM_PSWD_bb.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/ROM_PrimerNumbers.qip
+C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/ROM_PrimerNumbers.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/ROM_PrimerNumbers_bb.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/Score_RAM.qip
+C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/Score_RAM.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/Score_RAM_bb.v
+C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/password_rom.hex
+C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/playerid_rom.hex
+C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/rom_primenumbers.mif
+C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/score_ram.mif
+c:/altera_lite/25.1std/quartus/bin64/assignment_defaults.qdf
+	======= Total: 57 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

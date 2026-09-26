@@ -1,0 +1,281 @@
+// ECE6370
+// Author: Dharani Kandhalam - 1389
+// Name of Module: PrimeNumberGuessingGameTop
+
+module FinalProject_PrimeNumGuessingGame(
+    Player_Switch,
+    Password_Switch,
+    PasswordGameStartButton,
+    Player_LoadButton,
+    Level_Button,
+    clk,
+    rst,
+
+    TimerTens_Display,
+    TimerOnes_Display,
+    ScoreTens_Display,
+    SumOrScoreOnes_Display,
+    Random_Display,
+    Player_Display,
+
+    Logged_In_LED,
+    Logged_Out_LED,
+    LEDs
+);
+
+    input [3:0] Player_Switch;
+    input [3:0] Password_Switch;
+
+    input PasswordGameStartButton;
+    input Player_LoadButton;
+    input Level_Button;
+
+    input clk, rst;
+
+    output [6:0] TimerTens_Display, TimerOnes_Display;
+    output [6:0] ScoreTens_Display, SumOrScoreOnes_Display;
+    output [6:0] Random_Display, Player_Display;
+
+    output Logged_In_LED, Logged_Out_LED;
+    output [9:0] LEDs;
+
+    wire StartPulse;
+    wire LoadPulse;
+    wire LevelPulse;
+
+    wire Passed;
+    wire Logged_In;
+    wire Logged_Out;
+
+    wire oneSecPulse;
+    wire [3:0] TimerTens;
+    wire [3:0] TimerOnes;
+    wire TimeOut;
+
+    wire [1:0] Level;
+
+    wire Timer_Enable;
+    wire Timer_Reconfig;
+    wire Generate_Target;
+    wire ClearGuess;
+    wire ShowScore;
+    wire ShowGO;
+    wire GameActive;
+
+    wire [7:0] TargetPrime;
+    wire [7:0] GuessNumber;
+    wire [3:0] GuessTens;
+    wire [3:0] GuessOnes;
+    wire GuessReady;
+
+    wire IsPrimeGuess;
+
+    wire CorrectPulse;
+    wire WrongLED;
+    wire TooSmallLED;
+    wire TooLargeLED;
+    wire CorrectLED;
+
+    wire [3:0] ScoreTens;
+    wire [3:0] ScoreOnes;
+
+    reg [3:0] left_digit;
+    reg [3:0] right_digit;
+
+    localparam DISP_0 = 4'h0;
+    localparam DISP_1 = 4'h1;
+    localparam DISP_5 = 4'h5;
+    localparam DISP_6 = 4'h6;
+    localparam DISP_C = 4'hC;
+    localparam DISP_F = 4'hF;
+
+    ButtonShaper StartButtonShaper(
+        PasswordGameStartButton,
+        StartPulse,
+        clk,
+        rst
+    );
+
+    ButtonShaper PlayerLoadButtonShaper(
+        Player_LoadButton,
+        LoadPulse,
+        clk,
+        rst
+    );
+
+    ButtonShaper LevelButtonShaper(
+        Level_Button,
+        LevelPulse,
+        clk,
+        rst
+    );
+
+    ROMAuthentication AuthenticationModule(
+        .clk(clk),
+        .rst(rst),
+        .B_password(StartPulse),
+        .LogoutPulse(1'b0),
+        .PasswordSwitches(Password_Switch),
+        .Passed(Passed),
+        .Logged_In(Logged_In),
+        .Logged_Out(Logged_Out)
+    );
+
+    LevelSelector LevelSelectorModule(
+        .clk(clk),
+        .rst(rst),
+        .level_pulse(LevelPulse),
+        .game_active(GameActive),
+        .level(Level)
+    );
+
+    PrimeTargetGenerator TargetGeneratorModule(
+        .clk(clk),
+        .rst(rst),
+        .generate(Generate_Target),
+        .level(Level),
+        .target_prime(TargetPrime)
+    );
+
+    TwoDigitGuessInput GuessInputModule(
+        .clk(clk),
+        .rst(rst),
+        .load_pulse(LoadPulse && GameActive && !ShowGO),
+        .clear(ClearGuess),
+        .digit_in(Player_Switch),
+        .tens(GuessTens),
+        .ones(GuessOnes),
+        .guess(GuessNumber),
+        .guess_ready(GuessReady)
+    );
+
+    PrimeChecker PrimeCheckerModule(
+        .number(GuessNumber),
+        .is_prime(IsPrimeGuess)
+    );
+
+    PrimeGameController GameControllerModule(
+        .clk(clk),
+        .rst(rst),
+        .Logged_In(Logged_In),
+        .StartPulse(StartPulse),
+        .GuessReady(GuessReady),
+        .TimeOut(TimeOut),
+        .IsPrimeGuess(IsPrimeGuess),
+        .GuessNumber(GuessNumber),
+        .TargetPrime(TargetPrime),
+
+        .Timer_Enable(Timer_Enable),
+        .Timer_Reconfig(Timer_Reconfig),
+        .Generate_Target(Generate_Target),
+        .ClearGuess(ClearGuess),
+        .ShowScore(ShowScore),
+        .ShowGO(ShowGO),
+
+        .CorrectPulse(CorrectPulse),
+        .WrongLED(WrongLED),
+        .TooSmallLED(TooSmallLED),
+        .TooLargeLED(TooLargeLED),
+        .CorrectLED(CorrectLED),
+        .GameActive(GameActive)
+    );
+
+    OneSecTimer LFSR_OneSecondTimerModule(
+        Timer_Enable,
+        clk,
+        rst,
+        oneSecPulse
+    );
+
+    TwoDigitTimer TimerModule(
+        TimerTens,
+        TimerOnes,
+        TimeOut,
+        oneSecPulse,
+        Timer_Reconfig,
+        clk,
+        rst
+    );
+
+    Scoreboard ScoreboardModule(
+        ScoreTens,
+        ScoreOnes,
+        CorrectPulse,
+        1'b1,
+        TimeOut,
+        Timer_Reconfig,
+        clk,
+        rst
+    );
+
+    always @(*) begin
+        if (ShowGO) begin
+            left_digit  = DISP_6; // GO shown as 60
+            right_digit = DISP_0;
+        end
+        else if (WrongLED) begin
+            left_digit  = DISP_0;
+            right_digit = DISP_F; // F = wrong
+        end
+        else if (TooSmallLED) begin
+            left_digit  = DISP_0;
+            right_digit = DISP_5; // S = too small
+        end
+        else if (TooLargeLED) begin
+            left_digit  = DISP_0;
+            right_digit = DISP_1; // L = too large
+        end
+        else if (CorrectLED) begin
+            left_digit  = DISP_0;
+            right_digit = DISP_C; // C = correct
+        end
+        else begin
+            left_digit  = GuessTens;
+            right_digit = GuessOnes;
+        end
+    end
+
+    My7SegmentDecoder_4To7 TimerTensDisplayModule(
+        TimerTens,
+        TimerTens_Display
+    );
+
+    My7SegmentDecoder_4To7 TimerOnesDisplayModule(
+        TimerOnes,
+        TimerOnes_Display
+    );
+
+    My7SegmentDecoder_4To7 ScoreTensDisplayModule(
+        ScoreTens,
+        ScoreTens_Display
+    );
+
+    My7SegmentDecoder_4To7 ScoreOnesDisplayModule(
+        ScoreOnes,
+        SumOrScoreOnes_Display
+    );
+
+    My7SegmentDecoder_4To7 GuessTensDisplayModule(
+        left_digit,
+        Random_Display
+    );
+
+    My7SegmentDecoder_4To7 GuessOnesDisplayModule(
+        right_digit,
+        Player_Display
+    );
+
+    assign Logged_In_LED  = Logged_In;
+    assign Logged_Out_LED = Logged_Out;
+
+    assign LEDs[0]   = Logged_In;
+    assign LEDs[1]   = Logged_Out;
+    assign LEDs[2]   = GameActive;
+    assign LEDs[3]   = WrongLED;
+    assign LEDs[4]   = TooSmallLED;
+    assign LEDs[5]   = TooLargeLED;
+    assign LEDs[6]   = CorrectLED;
+    assign LEDs[8:7] = Level;
+    assign LEDs[9]   = TimeOut;
+
+endmodule

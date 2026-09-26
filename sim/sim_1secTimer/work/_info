@@ -1,0 +1,131 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/IntelFPGA/20.1
+vcountTo10Timer
+Z0 !s110 1773333728
+!i10b 1
+!s100 _Rc8Ti]Fb@VU=D3Oo]NIm1
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IQUAmIC9;PJ4?=^`HP:[PZ0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer
+w1773332403
+8C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/countTo10Timer.v
+FC:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/countTo10Timer.v
+!i122 59
+Z4 L0 1 28
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1773333728.000000
+!s107 C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/countTo10Timer.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/countTo10Timer.v|
+!i113 1
+Z7 o-work work
+Z8 tCvgOpt 0
+ncount@to10@timer
+vhundredmsecTimer
+R0
+!i10b 1
+!s100 =oRGiA=:QNooSlfc_[c651
+R1
+I0bKVaTaHjO5bclmE=LNQb3
+R2
+R3
+w1773332406
+8C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/hundredmsecTimer.v
+FC:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/hundredmsecTimer.v
+!i122 60
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/hundredmsecTimer.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/hundredmsecTimer.v|
+!i113 1
+R7
+R8
+nhundredmsec@timer
+vmsecTimer
+!s110 1773333729
+!i10b 1
+!s100 il3:4ecEfMLc0X<B`_h7T0
+R1
+IJJg0KQXf>c4T;Z:ghF5382
+R2
+R3
+w1773333718
+8C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/msecTimer.v
+FC:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/msecTimer.v
+!i122 61
+R4
+R5
+r1
+!s85 0
+31
+!s108 1773333729.000000
+!s107 C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/msecTimer.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/msecTimer.v|
+!i113 1
+R7
+R8
+nmsec@timer
+vOneSecTimer
+R0
+!i10b 1
+!s100 =L`MTQS4claD7O4Gmc>ON1
+R1
+ILaK]NcAQ`YQVJQc@K7I4z0
+R2
+R3
+w1773282391
+8C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/OneSecTimer.v
+FC:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/OneSecTimer.v
+!i122 57
+L0 1 13
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/OneSecTimer.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/OneSecTimer.v|
+!i113 1
+R7
+R8
+n@one@sec@timer
+vtestbench_OneSecTimer
+R0
+!i10b 1
+!s100 LTSE5Po^TXFizClWR`iBU2
+R1
+I5@[cX`^NRkT=NLJSV_>0<0
+R2
+R3
+w1773281274
+8C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/testbench_OneSecTimer.v
+FC:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/testbench_OneSecTimer.v
+!i122 58
+L0 2 101
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/testbench_OneSecTimer.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/testbench_OneSecTimer.v|
+!i113 1
+R7
+R8
+ntestbench_@one@sec@timer

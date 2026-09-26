@@ -1,0 +1,145 @@
+# Compile of OneSecTimer.v was successful.
+# Compile of testbench_OneSecTimer.v was successful.
+# Compile of countTo10Timer.v was successful.
+# Compile of hundredmsecTimer.v was successful.
+# Compile of msecTimer.v was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.testbench_OneSecTimer
+# vsim -gui work.testbench_OneSecTimer 
+# Start time: 21:53:14 on Mar 11,2026
+# Loading work.testbench_OneSecTimer
+# Loading work.OneSecTimer
+# Loading work.msecTimer
+# Loading work.hundredmsecTimer
+# Loading work.countTo10Timer
+add wave -r /*
+run 800ns
+# Compile of OneSecTimer.v was successful.
+# Compile of testbench_OneSecTimer.v was successful.
+# Compile of countTo10Timer.v was successful.
+# Compile of hundredmsecTimer.v was successful.
+# Compile of msecTimer.v was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.testbench_OneSecTimer
+# End time: 10:43:34 on Mar 12,2026, Elapsed time: 12:50:20
+# Errors: 0, Warnings: 3
+# vsim -gui work.testbench_OneSecTimer 
+# Start time: 10:43:34 on Mar 12,2026
+# Loading work.testbench_OneSecTimer
+# Loading work.OneSecTimer
+# Loading work.msecTimer
+# Loading work.hundredmsecTimer
+# Loading work.countTo10Timer
+add wave -r /*
+run 800ns
+# Compile of OneSecTimer.v was successful.
+# Compile of testbench_OneSecTimer.v was successful.
+# Compile of countTo10Timer.v was successful.
+# Compile of hundredmsecTimer.v was successful.
+# Compile of msecTimer.v was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.testbench_OneSecTimer
+# End time: 10:54:15 on Mar 12,2026, Elapsed time: 0:10:41
+# Errors: 0, Warnings: 2
+# vsim -gui work.testbench_OneSecTimer 
+# Start time: 10:54:15 on Mar 12,2026
+# Loading work.testbench_OneSecTimer
+# Loading work.OneSecTimer
+# Loading work.msecTimer
+# Loading work.hundredmsecTimer
+# Loading work.countTo10Timer
+add wave -r /*
+run 900ns
+run 800ns
+vsim -gui work.testbench_OneSecTimer
+# End time: 10:58:04 on Mar 12,2026, Elapsed time: 0:03:49
+# Errors: 0, Warnings: 1
+# vsim -gui work.testbench_OneSecTimer 
+# Start time: 10:58:04 on Mar 12,2026
+# Loading work.testbench_OneSecTimer
+# Loading work.OneSecTimer
+# Loading work.msecTimer
+# Loading work.hundredmsecTimer
+# Loading work.countTo10Timer
+# Compile of OneSecTimer.v was successful.
+# Compile of testbench_OneSecTimer.v was successful.
+# Compile of countTo10Timer.v was successful.
+# Compile of hundredmsecTimer.v was successful.
+# Compile of msecTimer.v was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.testbench_OneSecTimer
+# End time: 11:00:12 on Mar 12,2026, Elapsed time: 0:02:08
+# Errors: 0, Warnings: 2
+# vsim -gui work.testbench_OneSecTimer 
+# Start time: 11:00:12 on Mar 12,2026
+# Loading work.testbench_OneSecTimer
+# Loading work.OneSecTimer
+# Loading work.msecTimer
+# Loading work.hundredmsecTimer
+# Loading work.countTo10Timer
+add wave -r /*
+run 800ns
+run 200ns
+run 100ns
+run 200ns
+run 100ns
+run 200ns
+# WARNING: No extended dataflow license exists
+# Compile of OneSecTimer.v was successful.
+# Compile of testbench_OneSecTimer.v was successful.
+# Compile of countTo10Timer.v was successful.
+# Compile of hundredmsecTimer.v was successful.
+# Compile of msecTimer.v was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.testbench_OneSecTimer
+# End time: 11:21:46 on Mar 12,2026, Elapsed time: 0:21:34
+# Errors: 0, Warnings: 2
+# vsim -gui work.testbench_OneSecTimer 
+# Start time: 11:21:46 on Mar 12,2026
+# Loading work.testbench_OneSecTimer
+# Loading work.OneSecTimer
+# Loading work.msecTimer
+# Loading work.hundredmsecTimer
+# Loading work.countTo10Timer
+add wave -r /*
+run 800ns
+# Compile of OneSecTimer.v was successful.
+# Compile of testbench_OneSecTimer.v was successful.
+# Compile of countTo10Timer.v was successful.
+# Compile of hundredmsecTimer.v was successful.
+# Compile of msecTimer.v was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.testbench_OneSecTimer
+# End time: 11:34:28 on Mar 12,2026, Elapsed time: 0:12:42
+# Errors: 0, Warnings: 2
+# vsim -gui work.testbench_OneSecTimer 
+# Start time: 11:34:28 on Mar 12,2026
+# Loading work.testbench_OneSecTimer
+# Loading work.OneSecTimer
+# Loading work.msecTimer
+# Loading work.hundredmsecTimer
+# Loading work.countTo10Timer
+add wave -r /*
+run 800ns
+run 200ns
+# Compile of OneSecTimer.v was successful.
+# Compile of testbench_OneSecTimer.v was successful.
+# Compile of countTo10Timer.v was successful.
+# Compile of hundredmsecTimer.v was successful.
+# Compile of msecTimer.v was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.testbench_OneSecTimer
+# End time: 11:42:27 on Mar 12,2026, Elapsed time: 0:07:59
+# Errors: 0, Warnings: 2
+# vsim -gui work.testbench_OneSecTimer 
+# Start time: 11:42:27 on Mar 12,2026
+# Loading work.testbench_OneSecTimer
+# Loading work.OneSecTimer
+# Loading work.msecTimer
+# Loading work.hundredmsecTimer
+# Loading work.countTo10Timer
+add wave -r /*
+run 900ns
+run 800ns
+# End time: 16:58:36 on Mar 12,2026, Elapsed time: 5:16:09
+# Errors: 0, Warnings: 1

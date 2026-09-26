@@ -1,0 +1,17 @@
+Analysis & Synthesis Status : Successful - Mon May 11 15:21:28 2026
+Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+Revision Name : FinalProject_PrimeNumGuessingGame
+Top-level Entity Name : FinalProject_PrimeNumGuessingGame
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 363
+Total pins : 67
+Total virtual pins : 0
+Total block memory bits : 832
+Total DSP Blocks : 0
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0
+Total DLLs : 0

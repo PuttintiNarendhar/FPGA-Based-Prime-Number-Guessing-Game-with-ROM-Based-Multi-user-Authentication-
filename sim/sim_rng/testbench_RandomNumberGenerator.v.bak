@@ -1,0 +1,66 @@
+module testbench_RandomNumberGenerator();
+
+	reg clk, rst;
+	reg rngButton;
+	wire [3:0] randomNum;
+
+	//clock
+	always
+		begin
+			clk = 1'b0;
+			#10;
+			clk = 1'b1;
+			#10;
+		end
+
+	RandomNumberGenerator DUT_MyRandomNumberGenerator(randomNum, rngButton, clk, rst);
+
+	initial
+		begin
+			rst = 1'b1;
+			rngButton = 1'b1;
+
+			@(posedge clk);
+			@(posedge clk);
+
+			//Reset
+			#5 rst = 1'b0;
+			@(posedge clk);
+			@(posedge clk);
+			@(posedge clk);
+			@(posedge clk);
+
+			//release reset
+			#5 rst = 1'b1;
+			@(posedge clk);
+			@(posedge clk);
+
+			//press random number generation button
+			#5 rngButton = 1'b0;
+			@(posedge clk);
+			@(posedge clk);
+			@(posedge clk);
+			@(posedge clk);
+			@(posedge clk);
+
+			//release button and hold value
+			#5 rngButton = 1'b1;
+			@(posedge clk);
+			@(posedge clk);
+			@(posedge clk);
+
+			//press again for different duration
+			#5 rngButton = 1'b0;
+			@(posedge clk);
+			@(posedge clk);
+			@(posedge clk);
+
+			//release again
+			#5 rngButton = 1'b1;
+			@(posedge clk);
+			@(posedge clk);
+			@(posedge clk);
+
+		end
+
+endmodule

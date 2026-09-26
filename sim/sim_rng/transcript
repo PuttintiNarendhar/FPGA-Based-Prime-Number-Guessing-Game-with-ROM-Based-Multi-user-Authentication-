@@ -1,0 +1,23 @@
+# Compile of RandomNumberGenerator.v was successful.
+# Compile of testbench_RandomNumberGenerator.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.testbench_RandomNumberGenerator
+# vsim -gui work.testbench_RandomNumberGenerator 
+# Start time: 18:57:19 on Mar 28,2026
+# Loading work.testbench_RandomNumberGenerator
+# Loading work.RandomNumberGenerator
+run 800ns
+vsim -gui work.testbench_RandomNumberGenerator
+# End time: 19:02:36 on Mar 28,2026, Elapsed time: 0:05:17
+# Errors: 0, Warnings: 6
+# vsim -gui work.testbench_RandomNumberGenerator 
+# Start time: 19:02:36 on Mar 28,2026
+# Loading work.testbench_RandomNumberGenerator
+# Loading work.RandomNumberGenerator
+add wave -r /*
+run 800ns
+# Compile of RandomNumberGenerator.v was successful.
+# Compile of testbench_RandomNumberGenerator.v was successful.
+# 2 compiles, 0 failed with no errors.
+# End time: 19:22:31 on Mar 28,2026, Elapsed time: 0:19:55
+# Errors: 0, Warnings: 2

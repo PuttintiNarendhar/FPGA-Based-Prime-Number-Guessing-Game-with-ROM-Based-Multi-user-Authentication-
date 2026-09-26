@@ -1,0 +1,36 @@
+# Compile of My7SegmentDisplay.v was successful.
+# Compile of TestBench_My7SegmentDisplay.v failed with 3 errors.
+# 2 compiles, 1 failed with 3 errors.
+# Compile of My7SegmentDisplay.v was successful.
+# Compile of TestBench_My7SegmentDisplay.v failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+# Compile of My7SegmentDisplay.v was successful.
+# Compile of TestBench_My7SegmentDisplay.v failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+# Compile of My7SegmentDisplay.v was successful.
+# Compile of TestBench_My7SegmentDisplay.v failed with 16 errors.
+# 2 compiles, 1 failed with 16 errors.
+# Compile of My7SegmentDisplay.v was successful.
+# Compile of TestBench_My7SegmentDisplay.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.My7SegmentDecoder_4To7
+# vsim -gui work.My7SegmentDecoder_4To7 
+# Start time: 20:51:10 on Feb 04,2026
+# Loading work.My7SegmentDecoder_4To7
+vsim -gui work.TestBench_My7SegmentDecoder_4To7
+# End time: 20:52:53 on Feb 04,2026, Elapsed time: 0:01:43
+# Errors: 0, Warnings: 10
+# vsim -gui work.TestBench_My7SegmentDecoder_4To7 
+# Start time: 20:52:53 on Feb 04,2026
+# Loading work.TestBench_My7SegmentDecoder_4To7
+# Loading work.My7SegmentDecoder_4To7
+add wave -r /*
+run
+# Compile of My7SegmentDisplay.v was successful.
+# Compile of TestBench_My7SegmentDisplay.v was successful.
+# 2 compiles, 0 failed with no errors.
+run 20ns
+run 200ns
+run 20ns
+# End time: 21:10:25 on Feb 04,2026, Elapsed time: 0:17:32
+# Errors: 0, Warnings: 2

@@ -1,0 +1,131 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/IntelFPGA/20.1
+vOneDigitTimer
+Z0 !s110 1774747801
+!i10b 1
+!s100 oOX73Rel_AhL]>@07an@83
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IhzQ6Q9D2><OnH=iRzlgg62
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_digitTimer
+w1774747625
+Z4 8C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_digitTimer/OneDigitTimer.v
+Z5 FC:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_digitTimer/OneDigitTimer.v
+!i122 21
+L0 23 31
+Z6 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z7 !s108 1774747801.000000
+Z8 !s107 C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_digitTimer/OneDigitTimer.v|
+Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_digitTimer/OneDigitTimer.v|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+n@one@digit@timer
+vOnedigitTimer
+!s110 1774738699
+!i10b 1
+!s100 Z5ioU`2NXZ6eFJjNQSNLH3
+R1
+I<O49]fJ`nX;E]TVBhmNI=1
+R2
+R3
+w1774737683
+R4
+R5
+!i122 0
+L0 23 53
+R6
+r1
+!s85 0
+31
+!s108 1774738698.000000
+R8
+R9
+!i113 1
+R10
+R11
+n@onedigit@timer
+vtestbench_twoDigitTimer
+R0
+!i10b 1
+!s100 SNR>2gFK?MUYaaLWC1X7?3
+R1
+I06AAQmzl<QN;GE2G;_7S=3
+R2
+R3
+w1774747797
+8C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_digitTimer/testbench_TwoDigitTimer.v
+FC:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_digitTimer/testbench_TwoDigitTimer.v
+!i122 23
+L0 2 126
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_digitTimer/testbench_TwoDigitTimer.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_digitTimer/testbench_TwoDigitTimer.v|
+!i113 1
+R10
+R11
+ntestbench_two@digit@timer
+vtwoDigitTimer
+!s110 1774746705
+!i10b 1
+!s100 d2_i]KW<W;N1C1C1B<e7i2
+R1
+I1]Jmi`GBbhMS]fYLe=EA70
+R2
+R3
+w1774746473
+Z12 8C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_digitTimer/TwoDigitTimer.v
+Z13 FC:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_digitTimer/TwoDigitTimer.v
+!i122 16
+L0 10 19
+R6
+r1
+!s85 0
+31
+!s108 1774746705.000000
+Z14 !s107 C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_digitTimer/TwoDigitTimer.v|
+Z15 !s90 -reportprogress|300|-work|work|-stats=none|C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_digitTimer/TwoDigitTimer.v|
+!i113 1
+R10
+R11
+ntwo@digit@timer
+vTwoDigitTimer
+R0
+!i10b 1
+!s100 :ij4=6_oikh3h6bE_[>SP0
+R1
+Iai[hYjbPSzh8kf;SH?J7n2
+R2
+R3
+w1774747646
+R12
+R13
+!i122 22
+L0 11 23
+R6
+r1
+!s85 0
+31
+R7
+R14
+R15
+!i113 1
+R10
+R11
+n@two@digit@timer

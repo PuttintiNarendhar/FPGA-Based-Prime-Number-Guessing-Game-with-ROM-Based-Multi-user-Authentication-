@@ -1,0 +1,36 @@
+C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/msecTimer.v {1 {vlog -work work -stats=none C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/msecTimer.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module msecTimer
+
+Top level modules:
+	msecTimer
+
+} {} {}} C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/testbench_OneSecTimer.v {1 {vlog -work work -stats=none C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/testbench_OneSecTimer.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module testbench_OneSecTimer
+
+Top level modules:
+	testbench_OneSecTimer
+
+} {} {}} C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/countTo10Timer.v {1 {vlog -work work -stats=none C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/countTo10Timer.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module countTo10Timer
+
+Top level modules:
+	countTo10Timer
+
+} {} {}} C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/OneSecTimer.v {1 {vlog -work work -stats=none C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/OneSecTimer.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module OneSecTimer
+
+Top level modules:
+	OneSecTimer
+
+} {} {}} C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/hundredmsecTimer.v {1 {vlog -work work -stats=none C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_1secTimer/hundredmsecTimer.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module hundredmsecTimer
+
+Top level modules:
+	hundredmsecTimer
+
+} {} {}}

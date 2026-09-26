@@ -1,0 +1,28 @@
+module msecTimer(enable, clk, rst, msecTimeOut);
+
+input enable, clk, rst;
+output msecTimeOut;
+
+reg msecTimeOut;
+reg [2:0] count;
+
+always @(posedge clk) begin
+    if (rst == 1'b0) begin
+        count <= 0;
+        msecTimeOut <= 0;
+    end
+    else if (enable == 1'b1) begin
+        if (count == 4) begin
+            count <= 0;
+            msecTimeOut <= 1;
+        end
+        else begin
+            count <= count + 1;
+            msecTimeOut <= 0;
+        end
+    end
+    else
+        msecTimeOut <= 0;
+end
+
+endmodule

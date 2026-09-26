@@ -1,0 +1,48 @@
+module DisplayController(
+    input ShowGO,
+    input WrongLED,
+    input TooSmallLED,
+    input TooLargeLED,
+    input CorrectLED,
+    input [3:0] GuessTens,
+    input [3:0] GuessOnes,
+
+    output reg [3:0] left_digit,
+    output reg [3:0] right_digit
+);
+
+    localparam DISP_0 = 4'h0;
+    localparam DISP_1 = 4'hL;
+    localparam DISP_5 = 4'h5;
+    localparam DISP_6 = 4'h6;
+    localparam DISP_C = 4'hC;
+    localparam DISP_F = 4'hF;
+
+    always @(*) begin
+        if (ShowGO) begin
+            left_digit  = DISP_6; // GO → 60
+            right_digit = DISP_0;
+        end
+        else if (WrongLED) begin
+            left_digit  = DISP_0;
+            right_digit = DISP_F;
+        end
+        else if (TooSmallLED) begin
+            left_digit  = DISP_0;
+            right_digit = DISP_5;
+        end
+        else if (TooLargeLED) begin
+            left_digit  = DISP_0;
+            right_digit = DISP_1;
+        end
+        else if (CorrectLED) begin
+            left_digit  = DISP_0;
+            right_digit = DISP_C;
+        end
+        else begin
+            left_digit  = GuessTens;
+            right_digit = GuessOnes;
+        end
+    end
+
+endmodule

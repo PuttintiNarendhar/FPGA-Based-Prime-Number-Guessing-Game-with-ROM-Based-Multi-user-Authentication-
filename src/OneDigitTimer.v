@@ -1,0 +1,53 @@
+/* ECE6370
+   Author: Dharani Kandhalam - 1389
+   Name of Module: OnedigitTimer
+
+   Description:
+   This module implements a one-digit decimal countdown timer for the Lab 3
+   game timer design. The module stores one BCD digit (0 to 9) and updates
+   its value on the rising edge of the clock. When the reconfig signal is
+   asserted, the digit is loaded with 9. When borrowDN is asserted, the module
+   attempts to decrement the current digit by 1.
+
+   If the digit value is greater than 0, it decrements normally. If the digit
+   value is 0, the module checks noBorrowUP to determine whether a higher digit
+   can still be decremented. If borrowing from the higher digit is allowed,
+   this digit reloads to 9 and generates a borrowUP pulse to the next higher
+   digit. If borrowing is not allowed, the digit remains at 0 and asserts
+   noBorrowDN to indicate that no further downward borrowing is possible.
+
+   This module is designed as a reusable building block for a scalable multi-
+   digit timer and does not use a finite state machine.
+*/
+
+module OneDigitTimer(digit, Timer_enable, ReloadToNine, Timer_reconfig, clk, rst);
+
+	input clk, rst;
+	input Timer_enable, ReloadToNine, Timer_reconfig;
+	output [3:0] digit;
+
+	reg [3:0] digit;
+
+	always @(posedge clk) begin
+		if (rst == 1'b0) begin
+			digit <= 4'd0;
+		end
+		else begin
+			if (Timer_reconfig == 1'b1) begin
+				digit <= 4'd9;
+			end
+			else if (Timer_enable == 1'b1) begin
+				if (ReloadToNine == 1'b1) begin
+					digit <= 4'd9;
+				end
+				else if (digit > 4'd0) begin
+					digit <= digit - 4'd1;
+				end
+				else begin
+					digit <= 4'd0;
+				end
+			end
+		end
+	end
+
+endmodule

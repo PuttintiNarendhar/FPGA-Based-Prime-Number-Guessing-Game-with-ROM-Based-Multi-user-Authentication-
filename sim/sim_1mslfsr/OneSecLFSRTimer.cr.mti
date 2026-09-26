@@ -1,0 +1,22 @@
+C:/ADD_Projects/Lab4_KANDHALAM_Dharani/sim_1mslfsr/Testbench_OnemsLFSRTerminalValue.v {1 {vlog -work work -stats=none C:/ADD_Projects/Lab4_KANDHALAM_Dharani/sim_1mslfsr/Testbench_OnemsLFSRTerminalValue.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module testbench_msecTimer_LFSR_findTerminal
+
+Top level modules:
+	testbench_msecTimer_LFSR_findTerminal
+
+} {} {}} C:/ADD_Projects/Lab4_KANDHALAM_Dharani/sim_1mslfsr/msecTimer.v {1 {vlog -work work -stats=none C:/ADD_Projects/Lab4_KANDHALAM_Dharani/sim_1mslfsr/msecTimer.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module msecTimer
+
+Top level modules:
+	msecTimer
+
+} {} {}} C:/ADD_Projects/Lab4_KANDHALAM_Dharani/sim_1mslfsr/OnemsLFSRTimer.v {1 {vlog -work work -stats=none {C:\ADD_Projects\Lab4_KANDHALAM_Dharani\sim_1mslfsr\OnemsLFSRTimer.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module msecTimer_LFSR
+
+Top level modules:
+	msecTimer_LFSR
+
+} {} {}}

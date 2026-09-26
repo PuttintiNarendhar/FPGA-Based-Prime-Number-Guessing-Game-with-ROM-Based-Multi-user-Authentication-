@@ -1,0 +1,15 @@
+C:/ADD_Projects/Lab1_KANDHALAM_Dharani/sim_7seg/TestBench_My7SegmentDisplay.v {1 {vlog -work work -stats=none C:/ADD_Projects/Lab1_KANDHALAM_Dharani/sim_7seg/TestBench_My7SegmentDisplay.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module TestBench_My7SegmentDecoder_4To7
+
+Top level modules:
+	TestBench_My7SegmentDecoder_4To7
+
+} {} {}} C:/ADD_Projects/Lab1_KANDHALAM_Dharani/sim_7seg/My7SegmentDisplay.v {1 {vlog -work work -stats=none {C:\ADD_Projects\Lab1_KANDHALAM_Dharani\sim_7seg\My7SegmentDisplay.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module My7SegmentDecoder_4To7
+
+Top level modules:
+	My7SegmentDecoder_4To7
+
+} {} {}}

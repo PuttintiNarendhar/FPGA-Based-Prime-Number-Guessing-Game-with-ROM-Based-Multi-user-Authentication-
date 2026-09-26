@@ -1,0 +1,25 @@
+module LoadRegister(Reg_Input, Reg_Output, clk, Rst, load);
+	input [3:0] Reg_Input;
+	output [3:0] Reg_Output;
+	input clk, Rst, load;
+	
+	reg [3:0] Reg_Output;
+	
+	always @(posedge clk)
+		begin 
+			if(Rst == 1'b0);
+				begin
+					//reset condition
+					Reg_Output <= 4'b0000;
+				end
+			else
+				//normal operation after reset where it follows input
+				begin 
+					if(load == 1'b1) //whenever load button is pushed we are sending input to output
+						begin
+							Reg_Output <= Reg_Input;
+						end
+				end
+		end
+endmodule
+	

@@ -1,0 +1,1339 @@
+Analysis & Synthesis report for FinalProject_PrimeNumGuessingGame
+Mon May 11 15:21:28 2026
+Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. State Machine - |FinalProject_PrimeNumGuessingGame|ScoreTracking:ScoreTrackingModule|State
+ 11. State Machine - |FinalProject_PrimeNumGuessingGame|PrimeGameController:GameControllerModule|state
+ 12. State Machine - |FinalProject_PrimeNumGuessingGame|PrimeTargetGenerator:TargetGeneratorModule|state
+ 13. State Machine - |FinalProject_PrimeNumGuessingGame|Authentication:AuthenticationModule|Password_Checking_Module:DUT_Password_Checking_Module|State
+ 14. State Machine - |FinalProject_PrimeNumGuessingGame|Authentication:AuthenticationModule|ID_Checking_Module:DUT_ID_Checking_Module|State
+ 15. State Machine - |FinalProject_PrimeNumGuessingGame|ButtonShaper:LevelButtonShaper|State
+ 16. State Machine - |FinalProject_PrimeNumGuessingGame|ButtonShaper:PlayerLoadButtonShaper|State
+ 17. State Machine - |FinalProject_PrimeNumGuessingGame|ButtonShaper:StartButtonShaper|State
+ 18. Registers Removed During Synthesis
+ 19. General Register Statistics
+ 20. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 21. Source assignments for Authentication:AuthenticationModule|PlayerID_ROM:DUT_PlayerID_ROM|altsyncram:altsyncram_component|altsyncram_k2g1:auto_generated
+ 22. Source assignments for Authentication:AuthenticationModule|Password_ROM:DUT_Password_ROM|altsyncram:altsyncram_component|altsyncram_c3g1:auto_generated
+ 23. Source assignments for PrimeTargetGenerator:TargetGeneratorModule|ROM_PrimerNumbers:ROM_PrimerNumbers_Module|altsyncram:altsyncram_component|altsyncram_reg1:auto_generated
+ 24. Source assignments for Score_RAM:ScoreRAMModule|altsyncram:altsyncram_component|altsyncram_1sm1:auto_generated
+ 25. Parameter Settings for User Entity Instance: ButtonShaper:StartButtonShaper
+ 26. Parameter Settings for User Entity Instance: ButtonShaper:PlayerLoadButtonShaper
+ 27. Parameter Settings for User Entity Instance: ButtonShaper:LevelButtonShaper
+ 28. Parameter Settings for User Entity Instance: Authentication:AuthenticationModule|PlayerID_ROM:DUT_PlayerID_ROM|altsyncram:altsyncram_component
+ 29. Parameter Settings for User Entity Instance: Authentication:AuthenticationModule|ID_Checking_Module:DUT_ID_Checking_Module
+ 30. Parameter Settings for User Entity Instance: Authentication:AuthenticationModule|Password_ROM:DUT_Password_ROM|altsyncram:altsyncram_component
+ 31. Parameter Settings for User Entity Instance: Authentication:AuthenticationModule|Password_Checking_Module:DUT_Password_Checking_Module
+ 32. Parameter Settings for User Entity Instance: PrimeTargetGenerator:TargetGeneratorModule|ROM_PrimerNumbers:ROM_PrimerNumbers_Module|altsyncram:altsyncram_component
+ 33. Parameter Settings for User Entity Instance: OneSecTimer:LFSR_OneSecondTimerModule|msecTimer_LFSR:DUT_msecTimer_LFSR
+ 34. Parameter Settings for User Entity Instance: ScoreTracking:ScoreTrackingModule
+ 35. Parameter Settings for User Entity Instance: Score_RAM:ScoreRAMModule|altsyncram:altsyncram_component
+ 36. altsyncram Parameter Settings by Entity Instance
+ 37. Port Connectivity Checks: "Scoreboard:ScoreboardModule"
+ 38. Port Connectivity Checks: "OneSecTimer:LFSR_OneSecondTimerModule|msecTimer_LFSR:DUT_msecTimer_LFSR"
+ 39. Port Connectivity Checks: "PrimeTargetGenerator:TargetGeneratorModule|RandomIndexLFSR:RandomIndexLFSR_Module|PrimeLFSR:PrimeLFSR_Module"
+ 40. Port Connectivity Checks: "PrimeTargetGenerator:TargetGeneratorModule|RandomIndexLFSR:RandomIndexLFSR_Module"
+ 41. Port Connectivity Checks: "Authentication:AuthenticationModule"
+ 42. Post-Synthesis Netlist Statistics for Top Partition
+ 43. Elapsed Time Per Partition
+ 44. Analysis & Synthesis Messages
+ 45. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++---------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon May 11 15:21:28 2026           ;
+; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
+; Revision Name                   ; FinalProject_PrimeNumGuessingGame               ;
+; Top-level Entity Name           ; FinalProject_PrimeNumGuessingGame               ;
+; Family                          ; Cyclone V                                       ;
+; Logic utilization (in ALMs)     ; N/A                                             ;
+; Total registers                 ; 363                                             ;
+; Total pins                      ; 67                                              ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 832                                             ;
+; Total DSP Blocks                ; 0                                               ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 0                                               ;
+; Total DLLs                      ; 0                                               ;
++---------------------------------+-------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                                                           ;
++---------------------------------------------------------------------------------+-----------------------------------+-----------------------------------+
+; Option                                                                          ; Setting                           ; Default Value                     ;
++---------------------------------------------------------------------------------+-----------------------------------+-----------------------------------+
+; Device                                                                          ; 5CEBA4F23C7                       ;                                   ;
+; Top-level entity name                                                           ; FinalProject_PrimeNumGuessingGame ; FinalProject_PrimeNumGuessingGame ;
+; Family name                                                                     ; Cyclone V                         ; Cyclone V                         ;
+; Use smart compilation                                                           ; Off                               ; Off                               ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                                ; On                                ;
+; Enable compact report table                                                     ; Off                               ; Off                               ;
+; Restructure Multiplexers                                                        ; Auto                              ; Auto                              ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                               ; Off                               ;
+; Create Debugging Nodes for IP Cores                                             ; Off                               ; Off                               ;
+; Preserve fewer node names                                                       ; On                                ; On                                ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable                            ; Enable                            ;
+; Verilog Version                                                                 ; Verilog_2001                      ; Verilog_2001                      ;
+; VHDL Version                                                                    ; VHDL_1993                         ; VHDL_1993                         ;
+; State Machine Processing                                                        ; Auto                              ; Auto                              ;
+; Safe State Machine                                                              ; Off                               ; Off                               ;
+; Extract Verilog State Machines                                                  ; On                                ; On                                ;
+; Extract VHDL State Machines                                                     ; On                                ; On                                ;
+; Ignore Verilog initial constructs                                               ; Off                               ; Off                               ;
+; Iteration limit for constant Verilog loops                                      ; 5000                              ; 5000                              ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                               ; 250                               ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                                ; On                                ;
+; Infer RAMs from Raw Logic                                                       ; On                                ; On                                ;
+; Parallel Synthesis                                                              ; On                                ; On                                ;
+; DSP Block Balancing                                                             ; Auto                              ; Auto                              ;
+; NOT Gate Push-Back                                                              ; On                                ; On                                ;
+; Power-Up Don't Care                                                             ; On                                ; On                                ;
+; Remove Redundant Logic Cells                                                    ; Off                               ; Off                               ;
+; Remove Duplicate Registers                                                      ; On                                ; On                                ;
+; Ignore CARRY Buffers                                                            ; Off                               ; Off                               ;
+; Ignore CASCADE Buffers                                                          ; Off                               ; Off                               ;
+; Ignore GLOBAL Buffers                                                           ; Off                               ; Off                               ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                               ; Off                               ;
+; Ignore LCELL Buffers                                                            ; Off                               ; Off                               ;
+; Ignore SOFT Buffers                                                             ; On                                ; On                                ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                               ; Off                               ;
+; Optimization Technique                                                          ; Balanced                          ; Balanced                          ;
+; Carry Chain Length                                                              ; 70                                ; 70                                ;
+; Auto Carry Chains                                                               ; On                                ; On                                ;
+; Auto Open-Drain Pins                                                            ; On                                ; On                                ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                               ; Off                               ;
+; Auto ROM Replacement                                                            ; On                                ; On                                ;
+; Auto RAM Replacement                                                            ; On                                ; On                                ;
+; Auto DSP Block Replacement                                                      ; On                                ; On                                ;
+; Auto Shift Register Replacement                                                 ; Auto                              ; Auto                              ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto                              ; Auto                              ;
+; Auto Clock Enable Replacement                                                   ; On                                ; On                                ;
+; Strict RAM Replacement                                                          ; Off                               ; Off                               ;
+; Allow Synchronous Control Signals                                               ; On                                ; On                                ;
+; Force Use of Synchronous Clear Signals                                          ; Off                               ; Off                               ;
+; Auto Resource Sharing                                                           ; Off                               ; Off                               ;
+; Allow Any RAM Size For Recognition                                              ; Off                               ; Off                               ;
+; Allow Any ROM Size For Recognition                                              ; Off                               ; Off                               ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                               ; Off                               ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                                ; On                                ;
+; Ignore translate_off and synthesis_off directives                               ; Off                               ; Off                               ;
+; Timing-Driven Synthesis                                                         ; On                                ; On                                ;
+; Report Parameter Settings                                                       ; On                                ; On                                ;
+; Report Source Assignments                                                       ; On                                ; On                                ;
+; Report Connectivity Checks                                                      ; On                                ; On                                ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                               ; Off                               ;
+; Synchronization Register Chain Length                                           ; 3                                 ; 3                                 ;
+; Power Optimization During Synthesis                                             ; Normal compilation                ; Normal compilation                ;
+; HDL message level                                                               ; Level2                            ; Level2                            ;
+; Suppress Register Optimization Related Messages                                 ; Off                               ; Off                               ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000                              ; 5000                              ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000                              ; 5000                              ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                               ; 100                               ;
+; Clock MUX Protection                                                            ; On                                ; On                                ;
+; Auto Gated Clock Conversion                                                     ; Off                               ; Off                               ;
+; Block Design Naming                                                             ; Auto                              ; Auto                              ;
+; SDC constraint protection                                                       ; Off                               ; Off                               ;
+; Synthesis Effort                                                                ; Auto                              ; Auto                              ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                                ; On                                ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                               ; Off                               ;
+; Analysis & Synthesis Message Level                                              ; Medium                            ; Medium                            ;
+; Disable Register Merging Across Hierarchies                                     ; Auto                              ; Auto                              ;
+; Resource Aware Inference For Block RAM                                          ; On                                ; On                                ;
+; Automatic Parallel Synthesis                                                    ; On                                ; On                                ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                               ; Off                               ;
++---------------------------------------------------------------------------------+-----------------------------------+-----------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 8           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processors 5-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                               ;
++--------------------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path           ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                       ; Library ;
++--------------------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------+---------+
+; ../src/Password_Checking_Module.v          ; yes             ; User Verilog HDL File                  ; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/Password_Checking_Module.v          ;         ;
+; ../src/ID_Checking_Module.v                ; yes             ; User Verilog HDL File                  ; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/ID_Checking_Module.v                ;         ;
+; ../src/Authentication.v                    ; yes             ; User Verilog HDL File                  ; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/Authentication.v                    ;         ;
+; ../src/ScoreTracking.v                     ; yes             ; User Verilog HDL File                  ; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/ScoreTracking.v                     ;         ;
+; Score_RAM.v                                ; yes             ; User Wizard-Generated File             ; C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/Score_RAM.v                         ;         ;
+; PlayerID_ROM.v                             ; yes             ; User Wizard-Generated File             ; C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/PlayerID_ROM.v                      ;         ;
+; Password_ROM.v                             ; yes             ; User Wizard-Generated File             ; C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/Password_ROM.v                      ;         ;
+; ../src/PrimeLFSR.v                         ; yes             ; User Verilog HDL File                  ; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/PrimeLFSR.v                         ;         ;
+; ../src/Hint7SegmentDecoder.v               ; yes             ; User Verilog HDL File                  ; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/Hint7SegmentDecoder.v               ;         ;
+; ../src/ThreeDigitTimer.v                   ; yes             ; User Verilog HDL File                  ; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/ThreeDigitTimer.v                   ;         ;
+; ../src/DisplayController.v                 ; yes             ; User Verilog HDL File                  ; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/DisplayController.v                 ;         ;
+; ../src/TwoDigitGuessInput.v                ; yes             ; User Verilog HDL File                  ; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/TwoDigitGuessInput.v                ;         ;
+; ../src/RandomIndexLFSR.v                   ; yes             ; User Verilog HDL File                  ; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/RandomIndexLFSR.v                   ;         ;
+; ../src/PrimeTargetGenerator.v              ; yes             ; User Verilog HDL File                  ; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/PrimeTargetGenerator.v              ;         ;
+; ../src/PrimeGameController.v               ; yes             ; User Verilog HDL File                  ; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/PrimeGameController.v               ;         ;
+; ../src/PrimeChecker.v                      ; yes             ; User Verilog HDL File                  ; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/PrimeChecker.v                      ;         ;
+; ../src/LevelSelector.v                     ; yes             ; User Verilog HDL File                  ; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/LevelSelector.v                     ;         ;
+; ../src/FinalProject_PrimeNumGuessingGame.v ; yes             ; User Verilog HDL File                  ; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/FinalProject_PrimeNumGuessingGame.v ;         ;
+; ../src/ScoreBoardModule.v                  ; yes             ; User Verilog HDL File                  ; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/ScoreBoardModule.v                  ;         ;
+; ../src/OneSecTimer.v                       ; yes             ; User Verilog HDL File                  ; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/OneSecTimer.v                       ;         ;
+; ../src/OnemsLFSRTimer.v                    ; yes             ; User Verilog HDL File                  ; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/OnemsLFSRTimer.v                    ;         ;
+; ../src/My7SegmentDisplay.v                 ; yes             ; User Verilog HDL File                  ; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/My7SegmentDisplay.v                 ;         ;
+; ../src/hundredmsecTimer.v                  ; yes             ; User Verilog HDL File                  ; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/hundredmsecTimer.v                  ;         ;
+; ../src/countTo10Timer.v                    ; yes             ; User Verilog HDL File                  ; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/countTo10Timer.v                    ;         ;
+; ../src/ButtonShaper.v                      ; yes             ; User Verilog HDL File                  ; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/ButtonShaper.v                      ;         ;
+; ROM_PrimerNumbers.v                        ; yes             ; User Wizard-Generated File             ; C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/ROM_PrimerNumbers.v                 ;         ;
+; altsyncram.tdf                             ; yes             ; Megafunction                           ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altsyncram.tdf              ;         ;
+; stratix_ram_block.inc                      ; yes             ; Megafunction                           ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/stratix_ram_block.inc       ;         ;
+; lpm_mux.inc                                ; yes             ; Megafunction                           ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/lpm_mux.inc                 ;         ;
+; lpm_decode.inc                             ; yes             ; Megafunction                           ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/lpm_decode.inc              ;         ;
+; aglobal251.inc                             ; yes             ; Megafunction                           ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/aglobal251.inc              ;         ;
+; a_rdenreg.inc                              ; yes             ; Megafunction                           ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/a_rdenreg.inc               ;         ;
+; altrom.inc                                 ; yes             ; Megafunction                           ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altrom.inc                  ;         ;
+; altram.inc                                 ; yes             ; Megafunction                           ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altram.inc                  ;         ;
+; altdpram.inc                               ; yes             ; Megafunction                           ; c:/altera_lite/25.1std/quartus/libraries/megafunctions/altdpram.inc                ;         ;
+; db/altsyncram_k2g1.tdf                     ; yes             ; Auto-Generated Megafunction            ; C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/db/altsyncram_k2g1.tdf              ;         ;
+; playerid_rom.hex                           ; yes             ; Auto-Found Memory Initialization File  ; C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/playerid_rom.hex                    ;         ;
+; db/altsyncram_c3g1.tdf                     ; yes             ; Auto-Generated Megafunction            ; C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/db/altsyncram_c3g1.tdf              ;         ;
+; password_rom.hex                           ; yes             ; Auto-Found Memory Initialization File  ; C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/password_rom.hex                    ;         ;
+; db/altsyncram_reg1.tdf                     ; yes             ; Auto-Generated Megafunction            ; C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/db/altsyncram_reg1.tdf              ;         ;
+; rom_primenumbers.mif                       ; yes             ; Auto-Found Memory Initialization File  ; C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/rom_primenumbers.mif                ;         ;
+; db/altsyncram_1sm1.tdf                     ; yes             ; Auto-Generated Megafunction            ; C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/db/altsyncram_1sm1.tdf              ;         ;
+; score_ram.mif                              ; yes             ; Auto-Found Memory Initialization File  ; C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/score_ram.mif                       ;         ;
++--------------------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 327       ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 542       ;
+;     -- 7 input functions                    ; 5         ;
+;     -- 6 input functions                    ; 100       ;
+;     -- 5 input functions                    ; 64        ;
+;     -- 4 input functions                    ; 157       ;
+;     -- <=3 input functions                  ; 216       ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 363       ;
+;                                             ;           ;
+; I/O pins                                    ; 67        ;
+; Total MLAB memory bits                      ; 0         ;
+; Total block memory bits                     ; 832       ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 419       ;
+; Total fan-out                               ; 3628      ;
+; Average fan-out                             ; 3.31      ;
++---------------------------------------------+-----------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                 ;
++---------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
+; Compilation Hierarchy Node                                    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                     ; Entity Name                       ; Library Name ;
++---------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
+; |FinalProject_PrimeNumGuessingGame                            ; 542 (25)            ; 363 (0)                   ; 832               ; 0          ; 67   ; 0            ; |FinalProject_PrimeNumGuessingGame                                                                                                                                                      ; FinalProject_PrimeNumGuessingGame ; work         ;
+;    |Authentication:AuthenticationModule|                      ; 169 (0)             ; 127 (0)                   ; 320               ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|Authentication:AuthenticationModule                                                                                                                  ; Authentication                    ; work         ;
+;       |ID_Checking_Module:DUT_ID_Checking_Module|             ; 75 (75)             ; 54 (54)                   ; 0                 ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|Authentication:AuthenticationModule|ID_Checking_Module:DUT_ID_Checking_Module                                                                        ; ID_Checking_Module                ; work         ;
+;       |Password_Checking_Module:DUT_Password_Checking_Module| ; 94 (94)             ; 73 (73)                   ; 0                 ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|Authentication:AuthenticationModule|Password_Checking_Module:DUT_Password_Checking_Module                                                            ; Password_Checking_Module          ; work         ;
+;       |Password_ROM:DUT_Password_ROM|                         ; 0 (0)               ; 0 (0)                     ; 192               ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|Authentication:AuthenticationModule|Password_ROM:DUT_Password_ROM                                                                                    ; Password_ROM                      ; work         ;
+;          |altsyncram:altsyncram_component|                    ; 0 (0)               ; 0 (0)                     ; 192               ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|Authentication:AuthenticationModule|Password_ROM:DUT_Password_ROM|altsyncram:altsyncram_component                                                    ; altsyncram                        ; work         ;
+;             |altsyncram_c3g1:auto_generated|                  ; 0 (0)               ; 0 (0)                     ; 192               ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|Authentication:AuthenticationModule|Password_ROM:DUT_Password_ROM|altsyncram:altsyncram_component|altsyncram_c3g1:auto_generated                     ; altsyncram_c3g1                   ; work         ;
+;       |PlayerID_ROM:DUT_PlayerID_ROM|                         ; 0 (0)               ; 0 (0)                     ; 128               ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|Authentication:AuthenticationModule|PlayerID_ROM:DUT_PlayerID_ROM                                                                                    ; PlayerID_ROM                      ; work         ;
+;          |altsyncram:altsyncram_component|                    ; 0 (0)               ; 0 (0)                     ; 128               ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|Authentication:AuthenticationModule|PlayerID_ROM:DUT_PlayerID_ROM|altsyncram:altsyncram_component                                                    ; altsyncram                        ; work         ;
+;             |altsyncram_k2g1:auto_generated|                  ; 0 (0)               ; 0 (0)                     ; 128               ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|Authentication:AuthenticationModule|PlayerID_ROM:DUT_PlayerID_ROM|altsyncram:altsyncram_component|altsyncram_k2g1:auto_generated                     ; altsyncram_k2g1                   ; work         ;
+;    |ButtonShaper:LevelButtonShaper|                           ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|ButtonShaper:LevelButtonShaper                                                                                                                       ; ButtonShaper                      ; work         ;
+;    |ButtonShaper:PlayerLoadButtonShaper|                      ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|ButtonShaper:PlayerLoadButtonShaper                                                                                                                  ; ButtonShaper                      ; work         ;
+;    |ButtonShaper:StartButtonShaper|                           ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|ButtonShaper:StartButtonShaper                                                                                                                       ; ButtonShaper                      ; work         ;
+;    |DisplayController:DisplayModule|                          ; 4 (4)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|DisplayController:DisplayModule                                                                                                                      ; DisplayController                 ; work         ;
+;    |LevelSelector:LevelSelectorModule|                        ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|LevelSelector:LevelSelectorModule                                                                                                                    ; LevelSelector                     ; work         ;
+;    |My7SegmentDecoder_4To7:GameLeftDisplayModule|             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|My7SegmentDecoder_4To7:GameLeftDisplayModule                                                                                                         ; My7SegmentDecoder_4To7            ; work         ;
+;    |My7SegmentDecoder_4To7:GameRightDisplayModule|            ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|My7SegmentDecoder_4To7:GameRightDisplayModule                                                                                                        ; My7SegmentDecoder_4To7            ; work         ;
+;    |My7SegmentDecoder_4To7:ScoreOnesDigitDisplayModule|       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|My7SegmentDecoder_4To7:ScoreOnesDigitDisplayModule                                                                                                   ; My7SegmentDecoder_4To7            ; work         ;
+;    |My7SegmentDecoder_4To7:ScoreTensDisplayModule|            ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|My7SegmentDecoder_4To7:ScoreTensDisplayModule                                                                                                        ; My7SegmentDecoder_4To7            ; work         ;
+;    |My7SegmentDecoder_4To7:TimerOnesDisplayModule|            ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|My7SegmentDecoder_4To7:TimerOnesDisplayModule                                                                                                        ; My7SegmentDecoder_4To7            ; work         ;
+;    |My7SegmentDecoder_4To7:TimerTensDisplayModule|            ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|My7SegmentDecoder_4To7:TimerTensDisplayModule                                                                                                        ; My7SegmentDecoder_4To7            ; work         ;
+;    |OneSecTimer:LFSR_OneSecondTimerModule|                    ; 29 (0)              ; 30 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|OneSecTimer:LFSR_OneSecondTimerModule                                                                                                                ; OneSecTimer                       ; work         ;
+;       |countTo10Timer:DUT_countTo10Timer|                     ; 6 (6)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|OneSecTimer:LFSR_OneSecondTimerModule|countTo10Timer:DUT_countTo10Timer                                                                              ; countTo10Timer                    ; work         ;
+;       |hundredmsecTimer:DUT_hundredmsecTimer|                 ; 11 (11)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|OneSecTimer:LFSR_OneSecondTimerModule|hundredmsecTimer:DUT_hundredmsecTimer                                                                          ; hundredmsecTimer                  ; work         ;
+;       |msecTimer_LFSR:DUT_msecTimer_LFSR|                     ; 12 (12)             ; 17 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|OneSecTimer:LFSR_OneSecondTimerModule|msecTimer_LFSR:DUT_msecTimer_LFSR                                                                              ; msecTimer_LFSR                    ; work         ;
+;    |PrimeChecker:PrimeCheckerModule|                          ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|PrimeChecker:PrimeCheckerModule                                                                                                                      ; PrimeChecker                      ; work         ;
+;    |PrimeGameController:GameControllerModule|                 ; 88 (88)             ; 51 (51)                   ; 0                 ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|PrimeGameController:GameControllerModule                                                                                                             ; PrimeGameController               ; work         ;
+;    |PrimeTargetGenerator:TargetGeneratorModule|               ; 56 (46)             ; 39 (23)                   ; 256               ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|PrimeTargetGenerator:TargetGeneratorModule                                                                                                           ; PrimeTargetGenerator              ; work         ;
+;       |ROM_PrimerNumbers:ROM_PrimerNumbers_Module|            ; 0 (0)               ; 0 (0)                     ; 256               ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|PrimeTargetGenerator:TargetGeneratorModule|ROM_PrimerNumbers:ROM_PrimerNumbers_Module                                                                ; ROM_PrimerNumbers                 ; work         ;
+;          |altsyncram:altsyncram_component|                    ; 0 (0)               ; 0 (0)                     ; 256               ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|PrimeTargetGenerator:TargetGeneratorModule|ROM_PrimerNumbers:ROM_PrimerNumbers_Module|altsyncram:altsyncram_component                                ; altsyncram                        ; work         ;
+;             |altsyncram_reg1:auto_generated|                  ; 0 (0)               ; 0 (0)                     ; 256               ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|PrimeTargetGenerator:TargetGeneratorModule|ROM_PrimerNumbers:ROM_PrimerNumbers_Module|altsyncram:altsyncram_component|altsyncram_reg1:auto_generated ; altsyncram_reg1                   ; work         ;
+;       |RandomIndexLFSR:RandomIndexLFSR_Module|                ; 10 (0)              ; 16 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|PrimeTargetGenerator:TargetGeneratorModule|RandomIndexLFSR:RandomIndexLFSR_Module                                                                    ; RandomIndexLFSR                   ; work         ;
+;          |PrimeLFSR:PrimeLFSR_Module|                         ; 10 (10)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|PrimeTargetGenerator:TargetGeneratorModule|RandomIndexLFSR:RandomIndexLFSR_Module|PrimeLFSR:PrimeLFSR_Module                                         ; PrimeLFSR                         ; work         ;
+;    |ScoreTracking:ScoreTrackingModule|                        ; 57 (57)             ; 62 (62)                   ; 0                 ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|ScoreTracking:ScoreTrackingModule                                                                                                                    ; ScoreTracking                     ; work         ;
+;    |Score_RAM:ScoreRAMModule|                                 ; 0 (0)               ; 0 (0)                     ; 256               ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|Score_RAM:ScoreRAMModule                                                                                                                             ; Score_RAM                         ; work         ;
+;       |altsyncram:altsyncram_component|                       ; 0 (0)               ; 0 (0)                     ; 256               ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|Score_RAM:ScoreRAMModule|altsyncram:altsyncram_component                                                                                             ; altsyncram                        ; work         ;
+;          |altsyncram_1sm1:auto_generated|                     ; 0 (0)               ; 0 (0)                     ; 256               ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|Score_RAM:ScoreRAMModule|altsyncram:altsyncram_component|altsyncram_1sm1:auto_generated                                                              ; altsyncram_1sm1                   ; work         ;
+;    |Scoreboard:ScoreboardModule|                              ; 13 (13)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|Scoreboard:ScoreboardModule                                                                                                                          ; Scoreboard                        ; work         ;
+;    |ThreeDigitTimer:TimerModule|                              ; 26 (26)             ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|ThreeDigitTimer:TimerModule                                                                                                                          ; ThreeDigitTimer                   ; work         ;
+;    |TwoDigitGuessInput:GuessInputModule|                      ; 19 (19)             ; 22 (22)                   ; 0                 ; 0          ; 0    ; 0            ; |FinalProject_PrimeNumGuessingGame|TwoDigitGuessInput:GuessInputModule                                                                                                                  ; TwoDigitGuessInput                ; work         ;
++---------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                               ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------------+
+; Name                                                                                                                                                            ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                  ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------------+
+; Authentication:AuthenticationModule|Password_ROM:DUT_Password_ROM|altsyncram:altsyncram_component|altsyncram_c3g1:auto_generated|ALTSYNCRAM                     ; AUTO ; ROM         ; 32           ; 24           ; --           ; --           ; 768  ; Password_ROM.hex     ;
+; Authentication:AuthenticationModule|PlayerID_ROM:DUT_PlayerID_ROM|altsyncram:altsyncram_component|altsyncram_k2g1:auto_generated|ALTSYNCRAM                     ; AUTO ; ROM         ; 32           ; 16           ; --           ; --           ; 512  ; PlayerID_ROM.hex     ;
+; PrimeTargetGenerator:TargetGeneratorModule|ROM_PrimerNumbers:ROM_PrimerNumbers_Module|altsyncram:altsyncram_component|altsyncram_reg1:auto_generated|ALTSYNCRAM ; AUTO ; ROM         ; 32           ; 8            ; --           ; --           ; 256  ; ROM_PrimeNumbers.mif ;
+; Score_RAM:ScoreRAMModule|altsyncram:altsyncram_component|altsyncram_1sm1:auto_generated|ALTSYNCRAM                                                              ; AUTO ; Single Port ; 32           ; 8            ; --           ; --           ; 256  ; Score_RAM.mif        ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                                          ;
++--------+--------------+---------+--------------+--------------+--------------------------------------------------------------------------------------------------------------------------+---------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                                                                                          ; IP Include File     ;
++--------+--------------+---------+--------------+--------------+--------------------------------------------------------------------------------------------------------------------------+---------------------+
+; Altera ; ROM: 1-PORT  ; 23.1    ; N/A          ; N/A          ; |FinalProject_PrimeNumGuessingGame|Authentication:AuthenticationModule|Password_ROM:DUT_Password_ROM                     ; Password_ROM.v      ;
+; Altera ; ROM: 1-PORT  ; 23.1    ; N/A          ; N/A          ; |FinalProject_PrimeNumGuessingGame|Authentication:AuthenticationModule|PlayerID_ROM:DUT_PlayerID_ROM                     ; PlayerID_ROM.v      ;
+; Altera ; RAM: 1-PORT  ; 23.1    ; N/A          ; N/A          ; |FinalProject_PrimeNumGuessingGame|Score_RAM:ScoreRAMModule                                                              ; Score_RAM.v         ;
+; Altera ; ROM: 1-PORT  ; 25.1    ; N/A          ; N/A          ; |FinalProject_PrimeNumGuessingGame|PrimeTargetGenerator:TargetGeneratorModule|ROM_PrimerNumbers:ROM_PrimerNumbers_Module ; ROM_PrimerNumbers.v ;
++--------+--------------+---------+--------------+--------------+--------------------------------------------------------------------------------------------------------------------------+---------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |FinalProject_PrimeNumGuessingGame|ScoreTracking:ScoreTrackingModule|State                                                                                                             ;
++------------------------+----------------------+------------------------+----------------+-----------------+-----------------+----------------+--------------------+---------------+--------------------+
+; Name                   ; State.WRITE_PERSONAL ; State.COMPARE_PERSONAL ; State.RAMCATCH ; State.RAMCYCLE2 ; State.RAMCYCLE1 ; State.FETCHRAM ; State.WAITFORSCORE ; State.RAMINIT ; State.CHECK_GLOBAL ;
++------------------------+----------------------+------------------------+----------------+-----------------+-----------------+----------------+--------------------+---------------+--------------------+
+; State.RAMINIT          ; 0                    ; 0                      ; 0              ; 0               ; 0               ; 0              ; 0                  ; 0             ; 0                  ;
+; State.WAITFORSCORE     ; 0                    ; 0                      ; 0              ; 0               ; 0               ; 0              ; 1                  ; 1             ; 0                  ;
+; State.FETCHRAM         ; 0                    ; 0                      ; 0              ; 0               ; 0               ; 1              ; 0                  ; 1             ; 0                  ;
+; State.RAMCYCLE1        ; 0                    ; 0                      ; 0              ; 0               ; 1               ; 0              ; 0                  ; 1             ; 0                  ;
+; State.RAMCYCLE2        ; 0                    ; 0                      ; 0              ; 1               ; 0               ; 0              ; 0                  ; 1             ; 0                  ;
+; State.RAMCATCH         ; 0                    ; 0                      ; 1              ; 0               ; 0               ; 0              ; 0                  ; 1             ; 0                  ;
+; State.COMPARE_PERSONAL ; 0                    ; 1                      ; 0              ; 0               ; 0               ; 0              ; 0                  ; 1             ; 0                  ;
+; State.WRITE_PERSONAL   ; 1                    ; 0                      ; 0              ; 0               ; 0               ; 0              ; 0                  ; 1             ; 0                  ;
+; State.CHECK_GLOBAL     ; 0                    ; 0                      ; 0              ; 0               ; 0               ; 0              ; 0                  ; 1             ; 1                  ;
++------------------------+----------------------+------------------------+----------------+-----------------+-----------------+----------------+--------------------+---------------+--------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |FinalProject_PrimeNumGuessingGame|PrimeGameController:GameControllerModule|state                                                                                                                                                                       ;
++--------------------------+--------------------------+------------------------+--------------+-----------------+-------------------------+-----------------+--------------------+--------------+---------------+-------------------------+------------------+------------+
+; Name                     ; state.SHOW_WINNER_STATUS ; state.WAIT_SCORE_VALID ; state.LOGOUT ; state.GAME_OVER ; state.WAIT_TARGET_ROUND ; state.NEW_ROUND ; state.CORRECT_SHOW ; state.ACTIVE ; state.SHOW_GO ; state.WAIT_TARGET_START ; state.START_GAME ; state.IDLE ;
++--------------------------+--------------------------+------------------------+--------------+-----------------+-------------------------+-----------------+--------------------+--------------+---------------+-------------------------+------------------+------------+
+; state.IDLE               ; 0                        ; 0                      ; 0            ; 0               ; 0                       ; 0               ; 0                  ; 0            ; 0             ; 0                       ; 0                ; 0          ;
+; state.START_GAME         ; 0                        ; 0                      ; 0            ; 0               ; 0                       ; 0               ; 0                  ; 0            ; 0             ; 0                       ; 1                ; 1          ;
+; state.WAIT_TARGET_START  ; 0                        ; 0                      ; 0            ; 0               ; 0                       ; 0               ; 0                  ; 0            ; 0             ; 1                       ; 0                ; 1          ;
+; state.SHOW_GO            ; 0                        ; 0                      ; 0            ; 0               ; 0                       ; 0               ; 0                  ; 0            ; 1             ; 0                       ; 0                ; 1          ;
+; state.ACTIVE             ; 0                        ; 0                      ; 0            ; 0               ; 0                       ; 0               ; 0                  ; 1            ; 0             ; 0                       ; 0                ; 1          ;
+; state.CORRECT_SHOW       ; 0                        ; 0                      ; 0            ; 0               ; 0                       ; 0               ; 1                  ; 0            ; 0             ; 0                       ; 0                ; 1          ;
+; state.NEW_ROUND          ; 0                        ; 0                      ; 0            ; 0               ; 0                       ; 1               ; 0                  ; 0            ; 0             ; 0                       ; 0                ; 1          ;
+; state.WAIT_TARGET_ROUND  ; 0                        ; 0                      ; 0            ; 0               ; 1                       ; 0               ; 0                  ; 0            ; 0             ; 0                       ; 0                ; 1          ;
+; state.GAME_OVER          ; 0                        ; 0                      ; 0            ; 1               ; 0                       ; 0               ; 0                  ; 0            ; 0             ; 0                       ; 0                ; 1          ;
+; state.LOGOUT             ; 0                        ; 0                      ; 1            ; 0               ; 0                       ; 0               ; 0                  ; 0            ; 0             ; 0                       ; 0                ; 1          ;
+; state.WAIT_SCORE_VALID   ; 0                        ; 1                      ; 0            ; 0               ; 0                       ; 0               ; 0                  ; 0            ; 0             ; 0                       ; 0                ; 1          ;
+; state.SHOW_WINNER_STATUS ; 1                        ; 0                      ; 0            ; 0               ; 0                       ; 0               ; 0                  ; 0            ; 0             ; 0                       ; 0                ; 1          ;
++--------------------------+--------------------------+------------------------+--------------+-----------------+-------------------------+-----------------+--------------------+--------------+---------------+-------------------------+------------------+------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------+
+; State Machine - |FinalProject_PrimeNumGuessingGame|PrimeTargetGenerator:TargetGeneratorModule|state          ;
++----------------------+----------------+----------------+----------------------+------------+-----------------+
+; Name                 ; state.ROM_CYC2 ; state.ROM_CYC1 ; state.FETCH_ROM_ADDR ; state.IDLE ; state.ROM_CATCH ;
++----------------------+----------------+----------------+----------------------+------------+-----------------+
+; state.IDLE           ; 0              ; 0              ; 0                    ; 0          ; 0               ;
+; state.FETCH_ROM_ADDR ; 0              ; 0              ; 1                    ; 1          ; 0               ;
+; state.ROM_CYC1       ; 0              ; 1              ; 0                    ; 1          ; 0               ;
+; state.ROM_CYC2       ; 1              ; 0              ; 0                    ; 1          ; 0               ;
+; state.ROM_CATCH      ; 0              ; 0              ; 0                    ; 1          ; 1               ;
++----------------------+----------------+----------------+----------------------+------------+-----------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |FinalProject_PrimeNumGuessingGame|Authentication:AuthenticationModule|Password_Checking_Module:DUT_Password_Checking_Module|State                                                                              ;
++------------------+-----------------+--------------+---------------+----------------+---------------+---------------+------------------+--------------+--------------+--------------+--------------+--------------+--------------+
+; Name             ; State.WAITCYCLE ; State.PASSED ; State.COMPARE ; State.ROMCATCH ; State.ROMCYC2 ; State.ROMCYC1 ; State.FETCHROMWD ; State.DIGIT6 ; State.DIGIT5 ; State.DIGIT4 ; State.DIGIT3 ; State.DIGIT2 ; State.DIGIT1 ;
++------------------+-----------------+--------------+---------------+----------------+---------------+---------------+------------------+--------------+--------------+--------------+--------------+--------------+--------------+
+; State.DIGIT1     ; 0               ; 0            ; 0             ; 0              ; 0             ; 0             ; 0                ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ;
+; State.DIGIT2     ; 0               ; 0            ; 0             ; 0              ; 0             ; 0             ; 0                ; 0            ; 0            ; 0            ; 0            ; 1            ; 1            ;
+; State.DIGIT3     ; 0               ; 0            ; 0             ; 0              ; 0             ; 0             ; 0                ; 0            ; 0            ; 0            ; 1            ; 0            ; 1            ;
+; State.DIGIT4     ; 0               ; 0            ; 0             ; 0              ; 0             ; 0             ; 0                ; 0            ; 0            ; 1            ; 0            ; 0            ; 1            ;
+; State.DIGIT5     ; 0               ; 0            ; 0             ; 0              ; 0             ; 0             ; 0                ; 0            ; 1            ; 0            ; 0            ; 0            ; 1            ;
+; State.DIGIT6     ; 0               ; 0            ; 0             ; 0              ; 0             ; 0             ; 0                ; 1            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; State.FETCHROMWD ; 0               ; 0            ; 0             ; 0              ; 0             ; 0             ; 1                ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; State.ROMCYC1    ; 0               ; 0            ; 0             ; 0              ; 0             ; 1             ; 0                ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; State.ROMCYC2    ; 0               ; 0            ; 0             ; 0              ; 1             ; 0             ; 0                ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; State.ROMCATCH   ; 0               ; 0            ; 0             ; 1              ; 0             ; 0             ; 0                ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; State.COMPARE    ; 0               ; 0            ; 1             ; 0              ; 0             ; 0             ; 0                ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; State.PASSED     ; 0               ; 1            ; 0             ; 0              ; 0             ; 0             ; 0                ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; State.WAITCYCLE  ; 1               ; 0            ; 0             ; 0              ; 0             ; 0             ; 0                ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
++------------------+-----------------+--------------+---------------+----------------+---------------+---------------+------------------+--------------+--------------+--------------+--------------+--------------+--------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |FinalProject_PrimeNumGuessingGame|Authentication:AuthenticationModule|ID_Checking_Module:DUT_ID_Checking_Module|State                                                                   ;
++-------------------+------------------+-------------------+---------------+----------------+---------------+---------------+------------------+--------------+--------------+--------------+--------------+
+; Name              ; State.CHECKGUEST ; State.CHECKSTATUS ; State.COMPARE ; State.ROMCATCH ; State.ROMCYC2 ; State.ROMCYC1 ; State.FETCHROMWD ; State.DIGIT4 ; State.DIGIT3 ; State.DIGIT2 ; State.DIGIT1 ;
++-------------------+------------------+-------------------+---------------+----------------+---------------+---------------+------------------+--------------+--------------+--------------+--------------+
+; State.DIGIT1      ; 0                ; 0                 ; 0             ; 0              ; 0             ; 0             ; 0                ; 0            ; 0            ; 0            ; 0            ;
+; State.DIGIT2      ; 0                ; 0                 ; 0             ; 0              ; 0             ; 0             ; 0                ; 0            ; 0            ; 1            ; 1            ;
+; State.DIGIT3      ; 0                ; 0                 ; 0             ; 0              ; 0             ; 0             ; 0                ; 0            ; 1            ; 0            ; 1            ;
+; State.DIGIT4      ; 0                ; 0                 ; 0             ; 0              ; 0             ; 0             ; 0                ; 1            ; 0            ; 0            ; 1            ;
+; State.FETCHROMWD  ; 0                ; 0                 ; 0             ; 0              ; 0             ; 0             ; 1                ; 0            ; 0            ; 0            ; 1            ;
+; State.ROMCYC1     ; 0                ; 0                 ; 0             ; 0              ; 0             ; 1             ; 0                ; 0            ; 0            ; 0            ; 1            ;
+; State.ROMCYC2     ; 0                ; 0                 ; 0             ; 0              ; 1             ; 0             ; 0                ; 0            ; 0            ; 0            ; 1            ;
+; State.ROMCATCH    ; 0                ; 0                 ; 0             ; 1              ; 0             ; 0             ; 0                ; 0            ; 0            ; 0            ; 1            ;
+; State.COMPARE     ; 0                ; 0                 ; 1             ; 0              ; 0             ; 0             ; 0                ; 0            ; 0            ; 0            ; 1            ;
+; State.CHECKSTATUS ; 0                ; 1                 ; 0             ; 0              ; 0             ; 0             ; 0                ; 0            ; 0            ; 0            ; 1            ;
+; State.CHECKGUEST  ; 1                ; 0                 ; 0             ; 0              ; 0             ; 0             ; 0                ; 0            ; 0            ; 0            ; 1            ;
++-------------------+------------------+-------------------+---------------+----------------+---------------+---------------+------------------+--------------+--------------+--------------+--------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------+
+; State Machine - |FinalProject_PrimeNumGuessingGame|ButtonShaper:LevelButtonShaper|State ;
++-------------+------------+------------+-------------------------------------------------+
+; Name        ; State.INIT ; State.WAIT ; State.PULSE                                     ;
++-------------+------------+------------+-------------------------------------------------+
+; State.INIT  ; 0          ; 0          ; 0                                               ;
+; State.PULSE ; 1          ; 0          ; 1                                               ;
+; State.WAIT  ; 1          ; 1          ; 0                                               ;
++-------------+------------+------------+-------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------+
+; State Machine - |FinalProject_PrimeNumGuessingGame|ButtonShaper:PlayerLoadButtonShaper|State ;
++-------------+------------+------------+------------------------------------------------------+
+; Name        ; State.INIT ; State.WAIT ; State.PULSE                                          ;
++-------------+------------+------------+------------------------------------------------------+
+; State.INIT  ; 0          ; 0          ; 0                                                    ;
+; State.PULSE ; 1          ; 0          ; 1                                                    ;
+; State.WAIT  ; 1          ; 1          ; 0                                                    ;
++-------------+------------+------------+------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------+
+; State Machine - |FinalProject_PrimeNumGuessingGame|ButtonShaper:StartButtonShaper|State ;
++-------------+------------+------------+-------------------------------------------------+
+; Name        ; State.INIT ; State.WAIT ; State.PULSE                                     ;
++-------------+------------+------------+-------------------------------------------------+
+; State.INIT  ; 0          ; 0          ; 0                                               ;
+; State.PULSE ; 1          ; 0          ; 1                                               ;
+; State.WAIT  ; 1          ; 1          ; 0                                               ;
++-------------+------------+------------+-------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                        ;
++-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                         ; Reason for Removal                                                                                                ;
++-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+; TwoDigitGuessInput:GuessInputModule|ones[0]                                                           ; Merged with TwoDigitGuessInput:GuessInputModule|guess[0]                                                          ;
+; PrimeGameController:GameControllerModule|Timer_Enable                                                 ; Merged with PrimeGameController:GameControllerModule|GameActive                                                   ;
+; Authentication:AuthenticationModule|Password_Checking_Module:DUT_Password_Checking_Module|ROM_Addr[4] ; Merged with Authentication:AuthenticationModule|Password_Checking_Module:DUT_Password_Checking_Module|ROM_Addr[3] ;
+; Authentication:AuthenticationModule|ID_Checking_Module:DUT_ID_Checking_Module|ROM_Addr[4]             ; Merged with Authentication:AuthenticationModule|ID_Checking_Module:DUT_ID_Checking_Module|ROM_Addr[3]             ;
+; Authentication:AuthenticationModule|Password_Checking_Module:DUT_Password_Checking_Module|ROM_Addr[3] ; Stuck at GND due to stuck port data_in                                                                            ;
+; Authentication:AuthenticationModule|ID_Checking_Module:DUT_ID_Checking_Module|ROM_Addr[3]             ; Stuck at GND due to stuck port data_in                                                                            ;
+; ScoreTracking:ScoreTrackingModule|State~2                                                             ; Lost fanout                                                                                                       ;
+; ScoreTracking:ScoreTrackingModule|State~3                                                             ; Lost fanout                                                                                                       ;
+; ScoreTracking:ScoreTrackingModule|State~4                                                             ; Lost fanout                                                                                                       ;
+; PrimeGameController:GameControllerModule|state~2                                                      ; Lost fanout                                                                                                       ;
+; PrimeGameController:GameControllerModule|state~3                                                      ; Lost fanout                                                                                                       ;
+; PrimeGameController:GameControllerModule|state~4                                                      ; Lost fanout                                                                                                       ;
+; PrimeGameController:GameControllerModule|state~5                                                      ; Lost fanout                                                                                                       ;
+; PrimeTargetGenerator:TargetGeneratorModule|state~2                                                    ; Lost fanout                                                                                                       ;
+; PrimeTargetGenerator:TargetGeneratorModule|state~3                                                    ; Lost fanout                                                                                                       ;
+; Authentication:AuthenticationModule|Password_Checking_Module:DUT_Password_Checking_Module|State~2     ; Lost fanout                                                                                                       ;
+; Authentication:AuthenticationModule|Password_Checking_Module:DUT_Password_Checking_Module|State~3     ; Lost fanout                                                                                                       ;
+; Authentication:AuthenticationModule|Password_Checking_Module:DUT_Password_Checking_Module|State~4     ; Lost fanout                                                                                                       ;
+; Authentication:AuthenticationModule|Password_Checking_Module:DUT_Password_Checking_Module|State~5     ; Lost fanout                                                                                                       ;
+; Authentication:AuthenticationModule|ID_Checking_Module:DUT_ID_Checking_Module|State~2                 ; Lost fanout                                                                                                       ;
+; Authentication:AuthenticationModule|ID_Checking_Module:DUT_ID_Checking_Module|State~3                 ; Lost fanout                                                                                                       ;
+; Authentication:AuthenticationModule|ID_Checking_Module:DUT_ID_Checking_Module|State~4                 ; Lost fanout                                                                                                       ;
+; Authentication:AuthenticationModule|ID_Checking_Module:DUT_ID_Checking_Module|State~5                 ; Lost fanout                                                                                                       ;
+; ButtonShaper:LevelButtonShaper|State~4                                                                ; Lost fanout                                                                                                       ;
+; ButtonShaper:PlayerLoadButtonShaper|State~4                                                           ; Lost fanout                                                                                                       ;
+; ButtonShaper:StartButtonShaper|State~4                                                                ; Lost fanout                                                                                                       ;
+; ButtonShaper:LevelButtonShaper|State.WAIT                                                             ; Lost fanout                                                                                                       ;
+; ButtonShaper:PlayerLoadButtonShaper|State.WAIT                                                        ; Lost fanout                                                                                                       ;
+; ButtonShaper:StartButtonShaper|State.WAIT                                                             ; Lost fanout                                                                                                       ;
+; PrimeGameController:GameControllerModule|state.WAIT_TARGET_START                                      ; Merged with PrimeGameController:GameControllerModule|Timer_Reconfig                                               ;
+; Total Number of Removed Registers = 30                                                                ;                                                                                                                   ;
++-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 363   ;
+; Number of registers using Synchronous Clear  ; 224   ;
+; Number of registers using Synchronous Load   ; 5     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 179   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |FinalProject_PrimeNumGuessingGame|ScoreTracking:ScoreTrackingModule|PersonalBestScore[0]                                                        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |FinalProject_PrimeNumGuessingGame|PrimeTargetGenerator:TargetGeneratorModule|request_counter[3]                                                 ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |FinalProject_PrimeNumGuessingGame|PrimeTargetGenerator:TargetGeneratorModule|request_counter[2]                                                 ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |FinalProject_PrimeNumGuessingGame|PrimeTargetGenerator:TargetGeneratorModule|target_prime[5]                                                    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |FinalProject_PrimeNumGuessingGame|Authentication:AuthenticationModule|ID_Checking_Module:DUT_ID_Checking_Module|UserEnteredID[15]               ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; |FinalProject_PrimeNumGuessingGame|TwoDigitGuessInput:GuessInputModule|ones[3]                                                                   ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 0 LEs                ; 22 LEs                 ; Yes        ; |FinalProject_PrimeNumGuessingGame|ScoreTracking:ScoreTrackingModule|FinalScore_Reg[7]                                                           ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |FinalProject_PrimeNumGuessingGame|Authentication:AuthenticationModule|Password_Checking_Module:DUT_Password_Checking_Module|Tries_Count[1]      ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |FinalProject_PrimeNumGuessingGame|TwoDigitGuessInput:GuessInputModule|temp_tens[3]                                                              ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |FinalProject_PrimeNumGuessingGame|ScoreTracking:ScoreTrackingModule|Global_WinnerScore[7]                                                       ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |FinalProject_PrimeNumGuessingGame|Authentication:AuthenticationModule|Password_Checking_Module:DUT_Password_Checking_Module|UserEnteredPswd[23] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |FinalProject_PrimeNumGuessingGame|ThreeDigitTimer:TimerModule|Hundredsdigit[3]                                                                  ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |FinalProject_PrimeNumGuessingGame|ThreeDigitTimer:TimerModule|Hundredsdigit[1]                                                                  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |FinalProject_PrimeNumGuessingGame|OneSecTimer:LFSR_OneSecondTimerModule|countTo10Timer:DUT_countTo10Timer|count[1]                              ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |FinalProject_PrimeNumGuessingGame|OneSecTimer:LFSR_OneSecondTimerModule|hundredmsecTimer:DUT_hundredmsecTimer|count[3]                          ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |FinalProject_PrimeNumGuessingGame|ThreeDigitTimer:TimerModule|Onesdigit[2]                                                                      ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |FinalProject_PrimeNumGuessingGame|ThreeDigitTimer:TimerModule|Onesdigit[3]                                                                      ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |FinalProject_PrimeNumGuessingGame|ThreeDigitTimer:TimerModule|Tensdigit[3]                                                                      ;
+; 5:1                ; 15 bits   ; 45 LEs        ; 0 LEs                ; 45 LEs                 ; Yes        ; |FinalProject_PrimeNumGuessingGame|OneSecTimer:LFSR_OneSecondTimerModule|msecTimer_LFSR:DUT_msecTimer_LFSR|LFSR[1]                               ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |FinalProject_PrimeNumGuessingGame|ScoreTracking:ScoreTrackingModule|Score_RAMaddr[2]                                                            ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |FinalProject_PrimeNumGuessingGame|Scoreboard:ScoreboardModule|scoreTens[3]                                                                      ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |FinalProject_PrimeNumGuessingGame|Scoreboard:ScoreboardModule|scoreOnes[3]                                                                      ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; Yes        ; |FinalProject_PrimeNumGuessingGame|DisplayController:DisplayModule|result_code[2]                                                                ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |FinalProject_PrimeNumGuessingGame|Authentication:AuthenticationModule|ID_Checking_Module:DUT_ID_Checking_Module|UserEnteredID[7]                ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |FinalProject_PrimeNumGuessingGame|Authentication:AuthenticationModule|ID_Checking_Module:DUT_ID_Checking_Module|UserEnteredID[0]                ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |FinalProject_PrimeNumGuessingGame|Authentication:AuthenticationModule|ID_Checking_Module:DUT_ID_Checking_Module|UserEnteredID[11]               ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |FinalProject_PrimeNumGuessingGame|Authentication:AuthenticationModule|Password_Checking_Module:DUT_Password_Checking_Module|UserEnteredPswd[12] ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |FinalProject_PrimeNumGuessingGame|Authentication:AuthenticationModule|Password_Checking_Module:DUT_Password_Checking_Module|UserEnteredPswd[9]  ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |FinalProject_PrimeNumGuessingGame|Authentication:AuthenticationModule|Password_Checking_Module:DUT_Password_Checking_Module|UserEnteredPswd[4]  ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |FinalProject_PrimeNumGuessingGame|Authentication:AuthenticationModule|Password_Checking_Module:DUT_Password_Checking_Module|UserEnteredPswd[2]  ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |FinalProject_PrimeNumGuessingGame|Authentication:AuthenticationModule|Password_Checking_Module:DUT_Password_Checking_Module|UserEnteredPswd[18] ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |FinalProject_PrimeNumGuessingGame|PrimeTargetGenerator:TargetGeneratorModule|rom_address[1]                                                     ;
+; 9:1                ; 26 bits   ; 156 LEs       ; 0 LEs                ; 156 LEs                ; Yes        ; |FinalProject_PrimeNumGuessingGame|PrimeGameController:GameControllerModule|go_counter[0]                                                        ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |FinalProject_PrimeNumGuessingGame|Authentication:AuthenticationModule|ID_Checking_Module:DUT_ID_Checking_Module|State                           ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |FinalProject_PrimeNumGuessingGame|ScoreOnes_Display                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Authentication:AuthenticationModule|PlayerID_ROM:DUT_PlayerID_ROM|altsyncram:altsyncram_component|altsyncram_k2g1:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                        ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                         ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Authentication:AuthenticationModule|Password_ROM:DUT_Password_ROM|altsyncram:altsyncram_component|altsyncram_c3g1:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                        ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                         ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for PrimeTargetGenerator:TargetGeneratorModule|ROM_PrimerNumbers:ROM_PrimerNumbers_Module|altsyncram:altsyncram_component|altsyncram_reg1:auto_generated ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                                            ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                             ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Source assignments for Score_RAM:ScoreRAMModule|altsyncram:altsyncram_component|altsyncram_1sm1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                               ;
++---------------------------------+--------------------+------+--------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                ;
++---------------------------------+--------------------+------+--------------------------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ButtonShaper:StartButtonShaper ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; INIT           ; 0     ; Signed Integer                                     ;
+; PULSE          ; 1     ; Signed Integer                                     ;
+; WAIT           ; 2     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ButtonShaper:PlayerLoadButtonShaper ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; INIT           ; 0     ; Signed Integer                                          ;
+; PULSE          ; 1     ; Signed Integer                                          ;
+; WAIT           ; 2     ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ButtonShaper:LevelButtonShaper ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; INIT           ; 0     ; Signed Integer                                     ;
+; PULSE          ; 1     ; Signed Integer                                     ;
+; WAIT           ; 2     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Authentication:AuthenticationModule|PlayerID_ROM:DUT_PlayerID_ROM|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+------------------------------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                                               ;
++------------------------------------+----------------------+------------------------------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                                            ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                                         ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                                       ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                                       ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                                     ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                                            ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                                                                            ;
+; WIDTH_A                            ; 16                   ; Signed Integer                                                                     ;
+; WIDTHAD_A                          ; 5                    ; Signed Integer                                                                     ;
+; NUMWORDS_A                         ; 32                   ; Signed Integer                                                                     ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                                                                            ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                                            ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                                            ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                                            ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                                            ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                                            ;
+; WIDTH_B                            ; 1                    ; Untyped                                                                            ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                                                            ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                                                            ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                                            ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                                            ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                                            ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                                            ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                                            ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                                            ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                                            ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                                            ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                                            ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                                            ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                                            ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                                            ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                                                     ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                                            ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                                            ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                                            ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                                            ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                                            ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                                            ;
+; INIT_FILE                          ; PlayerID_ROM.hex     ; Untyped                                                                            ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                                            ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                                            ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                                            ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                                            ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                                                            ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                                            ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                                            ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                                            ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                                            ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                                            ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                                            ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                                                            ;
+; CBXI_PARAMETER                     ; altsyncram_k2g1      ; Untyped                                                                            ;
++------------------------------------+----------------------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Authentication:AuthenticationModule|ID_Checking_Module:DUT_ID_Checking_Module ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+; DIGIT1         ; 0     ; Signed Integer                                                                                    ;
+; DIGIT2         ; 1     ; Signed Integer                                                                                    ;
+; DIGIT3         ; 2     ; Signed Integer                                                                                    ;
+; DIGIT4         ; 3     ; Signed Integer                                                                                    ;
+; FETCHROMWD     ; 4     ; Signed Integer                                                                                    ;
+; ROMCYC1        ; 5     ; Signed Integer                                                                                    ;
+; ROMCYC2        ; 6     ; Signed Integer                                                                                    ;
+; ROMCATCH       ; 7     ; Signed Integer                                                                                    ;
+; COMPARE        ; 8     ; Signed Integer                                                                                    ;
+; CHECKSTATUS    ; 9     ; Signed Integer                                                                                    ;
+; CHECKGUEST     ; 10    ; Signed Integer                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Authentication:AuthenticationModule|Password_ROM:DUT_Password_ROM|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+------------------------------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                                               ;
++------------------------------------+----------------------+------------------------------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                                            ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                                         ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                                       ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                                       ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                                     ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                                            ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                                                                            ;
+; WIDTH_A                            ; 24                   ; Signed Integer                                                                     ;
+; WIDTHAD_A                          ; 5                    ; Signed Integer                                                                     ;
+; NUMWORDS_A                         ; 32                   ; Signed Integer                                                                     ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                                                                            ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                                            ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                                            ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                                            ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                                            ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                                            ;
+; WIDTH_B                            ; 1                    ; Untyped                                                                            ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                                                            ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                                                            ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                                            ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                                            ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                                            ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                                            ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                                            ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                                            ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                                            ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                                            ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                                            ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                                            ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                                            ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                                            ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                                                     ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                                            ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                                            ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                                            ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                                            ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                                            ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                                            ;
+; INIT_FILE                          ; Password_ROM.hex     ; Untyped                                                                            ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                                            ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                                            ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                                            ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                                            ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                                                            ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                                            ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                                            ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                                            ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                                            ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                                            ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                                            ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                                                            ;
+; CBXI_PARAMETER                     ; altsyncram_c3g1      ; Untyped                                                                            ;
++------------------------------------+----------------------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Authentication:AuthenticationModule|Password_Checking_Module:DUT_Password_Checking_Module ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                          ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------+
+; DIGIT1         ; 0     ; Signed Integer                                                                                                ;
+; DIGIT2         ; 1     ; Signed Integer                                                                                                ;
+; DIGIT3         ; 2     ; Signed Integer                                                                                                ;
+; DIGIT4         ; 3     ; Signed Integer                                                                                                ;
+; DIGIT5         ; 4     ; Signed Integer                                                                                                ;
+; DIGIT6         ; 5     ; Signed Integer                                                                                                ;
+; FETCHROMWD     ; 6     ; Signed Integer                                                                                                ;
+; ROMCYC1        ; 7     ; Signed Integer                                                                                                ;
+; ROMCYC2        ; 8     ; Signed Integer                                                                                                ;
+; ROMCATCH       ; 9     ; Signed Integer                                                                                                ;
+; COMPARE        ; 10    ; Signed Integer                                                                                                ;
+; PASSED         ; 11    ; Signed Integer                                                                                                ;
+; WAITCYCLE      ; 12    ; Signed Integer                                                                                                ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PrimeTargetGenerator:TargetGeneratorModule|ROM_PrimerNumbers:ROM_PrimerNumbers_Module|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+--------------------------------------------------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                                                                   ;
++------------------------------------+----------------------+--------------------------------------------------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                                                                ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                                                             ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                                                           ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                                                           ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                                                         ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                                                                ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                                                                                                ;
+; WIDTH_A                            ; 8                    ; Signed Integer                                                                                         ;
+; WIDTHAD_A                          ; 5                    ; Signed Integer                                                                                         ;
+; NUMWORDS_A                         ; 32                   ; Signed Integer                                                                                         ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                                                                                                ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                                                                ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                                                                ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                                                                ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                                                                ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                                                                ;
+; WIDTH_B                            ; 1                    ; Untyped                                                                                                ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                                                                                ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                                                                                ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                                                                ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                                                                ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                                                                ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                                                                ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                                                                ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                                                                ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                                                                ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                                                                ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                                                                ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                                                                ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                                                                ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                                                                ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                                                                         ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                                                                ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                                                                ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                                                                ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                                                                ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                                                                ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                                                                ;
+; INIT_FILE                          ; ROM_PrimeNumbers.mif ; Untyped                                                                                                ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                                                                ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                                                                ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                                                                ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                                                                ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                                                                                ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                                                                ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                                                                ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                                                                ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                                                                ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                                                                ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                                                                ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                                                                                ;
+; CBXI_PARAMETER                     ; altsyncram_reg1      ; Untyped                                                                                                ;
++------------------------------------+----------------------+--------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: OneSecTimer:LFSR_OneSecondTimerModule|msecTimer_LFSR:DUT_msecTimer_LFSR ;
++----------------+------------------+----------------------------------------------------------------------------------+
+; Parameter Name ; Value            ; Type                                                                             ;
++----------------+------------------+----------------------------------------------------------------------------------+
+; TERMINAL_VALUE ; 1011000100011111 ; Unsigned Binary                                                                  ;
++----------------+------------------+----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ScoreTracking:ScoreTrackingModule ;
++------------------+-------+-----------------------------------------------------+
+; Parameter Name   ; Value ; Type                                                ;
++------------------+-------+-----------------------------------------------------+
+; RAMINIT          ; 0000  ; Unsigned Binary                                     ;
+; WAITFORSCORE     ; 0001  ; Unsigned Binary                                     ;
+; FETCHRAM         ; 0010  ; Unsigned Binary                                     ;
+; RAMCYCLE1        ; 0011  ; Unsigned Binary                                     ;
+; RAMCYCLE2        ; 0100  ; Unsigned Binary                                     ;
+; RAMCATCH         ; 0101  ; Unsigned Binary                                     ;
+; COMPARE_PERSONAL ; 0110  ; Unsigned Binary                                     ;
+; WRITE_PERSONAL   ; 0111  ; Unsigned Binary                                     ;
+; CHECK_GLOBAL     ; 1000  ; Unsigned Binary                                     ;
++------------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Score_RAM:ScoreRAMModule|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+-------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                      ;
++------------------------------------+----------------------+-------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                   ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                            ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                   ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                                   ;
+; WIDTH_A                            ; 8                    ; Signed Integer                            ;
+; WIDTHAD_A                          ; 5                    ; Signed Integer                            ;
+; NUMWORDS_A                         ; 32                   ; Signed Integer                            ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                                   ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                   ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                   ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                   ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                   ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                   ;
+; WIDTH_B                            ; 1                    ; Untyped                                   ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                   ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                   ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                   ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                   ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                   ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                   ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                   ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                   ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                   ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                   ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                   ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                   ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                   ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                   ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                            ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                   ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                   ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                   ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                   ;
+; READ_DURING_WRITE_MODE_PORT_A      ; DONT_CARE            ; Untyped                                   ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                   ;
+; INIT_FILE                          ; Score_RAM.mif        ; Untyped                                   ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                   ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                   ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                   ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                   ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                   ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                   ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                   ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                   ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                   ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                   ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                   ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                   ;
+; CBXI_PARAMETER                     ; altsyncram_1sm1      ; Untyped                                   ;
++------------------------------------+----------------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                                                                  ;
++-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+; Name                                      ; Value                                                                                                                 ;
++-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+; Number of entity instances                ; 4                                                                                                                     ;
+; Entity Instance                           ; Authentication:AuthenticationModule|PlayerID_ROM:DUT_PlayerID_ROM|altsyncram:altsyncram_component                     ;
+;     -- OPERATION_MODE                     ; ROM                                                                                                                   ;
+;     -- WIDTH_A                            ; 16                                                                                                                    ;
+;     -- NUMWORDS_A                         ; 32                                                                                                                    ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                                                                                                ;
+;     -- WIDTH_B                            ; 1                                                                                                                     ;
+;     -- NUMWORDS_B                         ; 1                                                                                                                     ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                                                                ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                                                          ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                                                  ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                                                             ;
+; Entity Instance                           ; Authentication:AuthenticationModule|Password_ROM:DUT_Password_ROM|altsyncram:altsyncram_component                     ;
+;     -- OPERATION_MODE                     ; ROM                                                                                                                   ;
+;     -- WIDTH_A                            ; 24                                                                                                                    ;
+;     -- NUMWORDS_A                         ; 32                                                                                                                    ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                                                                                                ;
+;     -- WIDTH_B                            ; 1                                                                                                                     ;
+;     -- NUMWORDS_B                         ; 1                                                                                                                     ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                                                                ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                                                          ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                                                  ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                                                             ;
+; Entity Instance                           ; PrimeTargetGenerator:TargetGeneratorModule|ROM_PrimerNumbers:ROM_PrimerNumbers_Module|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                                                                                                   ;
+;     -- WIDTH_A                            ; 8                                                                                                                     ;
+;     -- NUMWORDS_A                         ; 32                                                                                                                    ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                                                                                                ;
+;     -- WIDTH_B                            ; 1                                                                                                                     ;
+;     -- NUMWORDS_B                         ; 1                                                                                                                     ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                                                                ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                                                          ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                                                  ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                                                             ;
+; Entity Instance                           ; Score_RAM:ScoreRAMModule|altsyncram:altsyncram_component                                                              ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                                                                                           ;
+;     -- WIDTH_A                            ; 8                                                                                                                     ;
+;     -- NUMWORDS_A                         ; 32                                                                                                                    ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                                                                                                ;
+;     -- WIDTH_B                            ; 1                                                                                                                     ;
+;     -- NUMWORDS_B                         ; 1                                                                                                                     ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                                                                ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                                                          ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                                                  ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                                                             ;
++-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "Scoreboard:ScoreboardModule" ;
++-------------+-------+----------+------------------------+
+; Port        ; Type  ; Severity ; Details                ;
++-------------+-------+----------+------------------------+
+; correct_led ; Input ; Info     ; Stuck at VCC           ;
++-------------+-------+----------+------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "OneSecTimer:LFSR_OneSecondTimerModule|msecTimer_LFSR:DUT_msecTimer_LFSR"            ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "PrimeTargetGenerator:TargetGeneratorModule|RandomIndexLFSR:RandomIndexLFSR_Module|PrimeLFSR:PrimeLFSR_Module" ;
++----------------+--------+----------+-----------------------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                                             ;
++----------------+--------+----------+-----------------------------------------------------------------------------------------------------+
+; lfsr_out[3..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                 ;
++----------------+--------+----------+-----------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "PrimeTargetGenerator:TargetGeneratorModule|RandomIndexLFSR:RandomIndexLFSR_Module"          ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; level1_index ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Authentication:AuthenticationModule"                                                  ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Passed ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 363                         ;
+;     ENA               ; 75                          ;
+;     ENA SCLR          ; 104                         ;
+;     SCLR              ; 120                         ;
+;     SLD               ; 5                           ;
+;     plain             ; 59                          ;
+; arriav_lcell_comb     ; 549                         ;
+;     arith             ; 40                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 34                          ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 1                           ;
+;         4 data inputs ; 2                           ;
+;     extend            ; 5                           ;
+;         7 data inputs ; 5                           ;
+;     normal            ; 504                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 7                           ;
+;         2 data inputs ; 90                          ;
+;         3 data inputs ; 87                          ;
+;         4 data inputs ; 155                         ;
+;         5 data inputs ; 64                          ;
+;         6 data inputs ; 100                         ;
+; boundary_port         ; 67                          ;
+; stratixv_ram_block    ; 56                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 2.16                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+    Info: Processing started: Mon May 11 15:21:18 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FinalProject_PrimeNumGuessingGame -c FinalProject_PrimeNumGuessingGame
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/password_checking_module.v
+    Info (12023): Found entity 1: Password_Checking_Module File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/Password_Checking_Module.v Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/id_checking_module.v
+    Info (12023): Found entity 1: ID_Checking_Module File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/ID_Checking_Module.v Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/authentication.v
+    Info (12023): Found entity 1: Authentication File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/Authentication.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/scoretracking.v
+    Info (12023): Found entity 1: ScoreTracking File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/ScoreTracking.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file score_ram.v
+    Info (12023): Found entity 1: Score_RAM File: C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/Score_RAM.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file playerid_rom.v
+    Info (12023): Found entity 1: PlayerID_ROM File: C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/PlayerID_ROM.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file password_rom.v
+    Info (12023): Found entity 1: Password_ROM File: C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/Password_ROM.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/primelfsr.v
+    Info (12023): Found entity 1: PrimeLFSR File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/PrimeLFSR.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/hint7segmentdecoder.v
+    Info (12023): Found entity 1: Hint7SegmentDecoder File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/Hint7SegmentDecoder.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/threedigittimer.v
+    Info (12023): Found entity 1: ThreeDigitTimer File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/ThreeDigitTimer.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file rom_pswd.v
+    Info (12023): Found entity 1: ROM_PSWD File: C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/ROM_PSWD.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/displaycontroller.v
+    Info (12023): Found entity 1: DisplayController File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/DisplayController.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/twodigitguessinput.v
+    Info (12023): Found entity 1: TwoDigitGuessInput File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/TwoDigitGuessInput.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/randomindexlfsr.v
+    Info (12023): Found entity 1: RandomIndexLFSR File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/RandomIndexLFSR.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/primetargetgenerator.v
+    Info (12023): Found entity 1: PrimeTargetGenerator File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/PrimeTargetGenerator.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/primegamecontroller.v
+    Info (12023): Found entity 1: PrimeGameController File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/PrimeGameController.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/primechecker.v
+    Info (12023): Found entity 1: PrimeChecker File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/PrimeChecker.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/levelselector.v
+    Info (12023): Found entity 1: LevelSelector File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/LevelSelector.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/finalproject_primenumguessinggame.v
+    Info (12023): Found entity 1: FinalProject_PrimeNumGuessingGame File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/FinalProject_PrimeNumGuessingGame.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/verificationmodule.v
+    Info (12023): Found entity 1: VerificationModule File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/VerificationModule.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/twodigittimer.v
+    Info (12023): Found entity 1: TwoDigitTimer File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/TwoDigitTimer.v Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/scoreboardmodule.v
+    Info (12023): Found entity 1: Scoreboard File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/ScoreBoardModule.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/romauthentication.v
+    Info (12023): Found entity 1: ROMAuthentication File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/ROMAuthentication.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/randomnumbergenerator.v
+    Info (12023): Found entity 1: RandomNumberGenerator File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/RandomNumberGenerator.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/playermodule.v
+    Info (12023): Found entity 1: PlayerModule File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/PlayerModule.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/onesectimer.v
+    Info (12023): Found entity 1: OneSecTimer File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/OneSecTimer.v Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/onemslfsrtimer.v
+    Info (12023): Found entity 1: msecTimer_LFSR File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/OnemsLFSRTimer.v Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/onedigittimer.v
+    Info (12023): Found entity 1: OneDigitTimer File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/OneDigitTimer.v Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/my7segmentdisplay.v
+    Info (12023): Found entity 1: My7SegmentDecoder_4To7 File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/My7SegmentDisplay.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/my4badder.v
+    Info (12023): Found entity 1: My4BAdder File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/My4BAdder.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/msectimer.v
+    Info (12023): Found entity 1: msecTimer File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/msecTimer.v Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/loadregister.v
+    Info (12023): Found entity 1: LoadRegister File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/LoadRegister.v Line: 16
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/hundredmsectimer.v
+    Info (12023): Found entity 1: hundredmsecTimer File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/hundredmsecTimer.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/countto10timer.v
+    Info (12023): Found entity 1: countTo10Timer File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/countTo10Timer.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/buttonshaper.v
+    Info (12023): Found entity 1: ButtonShaper File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/ButtonShaper.v Line: 20
+Info (12021): Found 1 design units, including 1 entities, in source file /add_projects/finalproject_primenumguess/src/accesscontroller.v
+    Info (12023): Found entity 1: AccessControl_Lab3 File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/AccessController.v Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file primernumbersrom.v
+    Info (12023): Found entity 1: PrimerNumbersROM File: C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/PrimerNumbersROM.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file rom_primernumbers.v
+    Info (12023): Found entity 1: ROM_PrimerNumbers File: C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/ROM_PrimerNumbers.v Line: 40
+Info (12127): Elaborating entity "FinalProject_PrimeNumGuessingGame" for the top level hierarchy
+Info (12128): Elaborating entity "ButtonShaper" for hierarchy "ButtonShaper:StartButtonShaper" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/FinalProject_PrimeNumGuessingGame.v Line: 133
+Info (12128): Elaborating entity "Authentication" for hierarchy "Authentication:AuthenticationModule" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/FinalProject_PrimeNumGuessingGame.v Line: 166
+Info (12128): Elaborating entity "PlayerID_ROM" for hierarchy "Authentication:AuthenticationModule|PlayerID_ROM:DUT_PlayerID_ROM" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/Authentication.v Line: 39
+Info (12128): Elaborating entity "altsyncram" for hierarchy "Authentication:AuthenticationModule|PlayerID_ROM:DUT_PlayerID_ROM|altsyncram:altsyncram_component" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/PlayerID_ROM.v Line: 82
+Info (12130): Elaborated megafunction instantiation "Authentication:AuthenticationModule|PlayerID_ROM:DUT_PlayerID_ROM|altsyncram:altsyncram_component" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/PlayerID_ROM.v Line: 82
+Info (12133): Instantiated megafunction "Authentication:AuthenticationModule|PlayerID_ROM:DUT_PlayerID_ROM|altsyncram:altsyncram_component" with the following parameter: File: C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/PlayerID_ROM.v Line: 82
+    Info (12134): Parameter "address_aclr_a" = "NONE"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "PlayerID_ROM.hex"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "32"
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
+    Info (12134): Parameter "widthad_a" = "5"
+    Info (12134): Parameter "width_a" = "16"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_k2g1.tdf
+    Info (12023): Found entity 1: altsyncram_k2g1 File: C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/db/altsyncram_k2g1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_k2g1" for hierarchy "Authentication:AuthenticationModule|PlayerID_ROM:DUT_PlayerID_ROM|altsyncram:altsyncram_component|altsyncram_k2g1:auto_generated" File: c:/altera_lite/25.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "ID_Checking_Module" for hierarchy "Authentication:AuthenticationModule|ID_Checking_Module:DUT_ID_Checking_Module" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/Authentication.v Line: 52
+Info (12128): Elaborating entity "Password_ROM" for hierarchy "Authentication:AuthenticationModule|Password_ROM:DUT_Password_ROM" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/Authentication.v Line: 58
+Info (12128): Elaborating entity "altsyncram" for hierarchy "Authentication:AuthenticationModule|Password_ROM:DUT_Password_ROM|altsyncram:altsyncram_component" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/Password_ROM.v Line: 82
+Info (12130): Elaborated megafunction instantiation "Authentication:AuthenticationModule|Password_ROM:DUT_Password_ROM|altsyncram:altsyncram_component" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/Password_ROM.v Line: 82
+Info (12133): Instantiated megafunction "Authentication:AuthenticationModule|Password_ROM:DUT_Password_ROM|altsyncram:altsyncram_component" with the following parameter: File: C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/Password_ROM.v Line: 82
+    Info (12134): Parameter "address_aclr_a" = "NONE"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "Password_ROM.hex"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "32"
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
+    Info (12134): Parameter "widthad_a" = "5"
+    Info (12134): Parameter "width_a" = "24"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_c3g1.tdf
+    Info (12023): Found entity 1: altsyncram_c3g1 File: C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/db/altsyncram_c3g1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_c3g1" for hierarchy "Authentication:AuthenticationModule|Password_ROM:DUT_Password_ROM|altsyncram:altsyncram_component|altsyncram_c3g1:auto_generated" File: c:/altera_lite/25.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "Password_Checking_Module" for hierarchy "Authentication:AuthenticationModule|Password_Checking_Module:DUT_Password_Checking_Module" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/Authentication.v Line: 77
+Info (12128): Elaborating entity "LevelSelector" for hierarchy "LevelSelector:LevelSelectorModule" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/FinalProject_PrimeNumGuessingGame.v Line: 178
+Info (12128): Elaborating entity "PrimeTargetGenerator" for hierarchy "PrimeTargetGenerator:TargetGeneratorModule" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/FinalProject_PrimeNumGuessingGame.v Line: 193
+Info (12128): Elaborating entity "RandomIndexLFSR" for hierarchy "PrimeTargetGenerator:TargetGeneratorModule|RandomIndexLFSR:RandomIndexLFSR_Module" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/PrimeTargetGenerator.v Line: 35
+Info (12128): Elaborating entity "PrimeLFSR" for hierarchy "PrimeTargetGenerator:TargetGeneratorModule|RandomIndexLFSR:RandomIndexLFSR_Module|PrimeLFSR:PrimeLFSR_Module" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/RandomIndexLFSR.v Line: 22
+Info (12128): Elaborating entity "ROM_PrimerNumbers" for hierarchy "PrimeTargetGenerator:TargetGeneratorModule|ROM_PrimerNumbers:ROM_PrimerNumbers_Module" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/PrimeTargetGenerator.v Line: 43
+Info (12128): Elaborating entity "altsyncram" for hierarchy "PrimeTargetGenerator:TargetGeneratorModule|ROM_PrimerNumbers:ROM_PrimerNumbers_Module|altsyncram:altsyncram_component" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/ROM_PrimerNumbers.v Line: 82
+Info (12130): Elaborated megafunction instantiation "PrimeTargetGenerator:TargetGeneratorModule|ROM_PrimerNumbers:ROM_PrimerNumbers_Module|altsyncram:altsyncram_component" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/ROM_PrimerNumbers.v Line: 82
+Info (12133): Instantiated megafunction "PrimeTargetGenerator:TargetGeneratorModule|ROM_PrimerNumbers:ROM_PrimerNumbers_Module|altsyncram:altsyncram_component" with the following parameter: File: C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/ROM_PrimerNumbers.v Line: 82
+    Info (12134): Parameter "address_aclr_a" = "NONE"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "ROM_PrimeNumbers.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "32"
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
+    Info (12134): Parameter "widthad_a" = "5"
+    Info (12134): Parameter "width_a" = "8"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_reg1.tdf
+    Info (12023): Found entity 1: altsyncram_reg1 File: C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/db/altsyncram_reg1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_reg1" for hierarchy "PrimeTargetGenerator:TargetGeneratorModule|ROM_PrimerNumbers:ROM_PrimerNumbers_Module|altsyncram:altsyncram_component|altsyncram_reg1:auto_generated" File: c:/altera_lite/25.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "TwoDigitGuessInput" for hierarchy "TwoDigitGuessInput:GuessInputModule" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/FinalProject_PrimeNumGuessingGame.v Line: 210
+Info (12128): Elaborating entity "PrimeChecker" for hierarchy "PrimeChecker:PrimeCheckerModule" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/FinalProject_PrimeNumGuessingGame.v Line: 219
+Info (12128): Elaborating entity "PrimeGameController" for hierarchy "PrimeGameController:GameControllerModule" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/FinalProject_PrimeNumGuessingGame.v Line: 261
+Info (12128): Elaborating entity "OneSecTimer" for hierarchy "OneSecTimer:LFSR_OneSecondTimerModule" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/FinalProject_PrimeNumGuessingGame.v Line: 272
+Info (12128): Elaborating entity "msecTimer_LFSR" for hierarchy "OneSecTimer:LFSR_OneSecondTimerModule|msecTimer_LFSR:DUT_msecTimer_LFSR" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/OneSecTimer.v Line: 20
+Info (12128): Elaborating entity "hundredmsecTimer" for hierarchy "OneSecTimer:LFSR_OneSecondTimerModule|hundredmsecTimer:DUT_hundredmsecTimer" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/OneSecTimer.v Line: 22
+Warning (10230): Verilog HDL assignment warning at hundredmsecTimer.v(20): truncated value with size 32 to match size of target (7) File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/hundredmsecTimer.v Line: 20
+Info (12128): Elaborating entity "countTo10Timer" for hierarchy "OneSecTimer:LFSR_OneSecondTimerModule|countTo10Timer:DUT_countTo10Timer" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/OneSecTimer.v Line: 24
+Warning (10230): Verilog HDL assignment warning at countTo10Timer.v(20): truncated value with size 32 to match size of target (4) File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/countTo10Timer.v Line: 20
+Info (12128): Elaborating entity "ThreeDigitTimer" for hierarchy "ThreeDigitTimer:TimerModule" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/FinalProject_PrimeNumGuessingGame.v Line: 289
+Info (12128): Elaborating entity "Scoreboard" for hierarchy "Scoreboard:ScoreboardModule" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/FinalProject_PrimeNumGuessingGame.v Line: 305
+Info (12128): Elaborating entity "ScoreTracking" for hierarchy "ScoreTracking:ScoreTrackingModule" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/FinalProject_PrimeNumGuessingGame.v Line: 322
+Info (12128): Elaborating entity "Score_RAM" for hierarchy "Score_RAM:ScoreRAMModule" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/FinalProject_PrimeNumGuessingGame.v Line: 331
+Info (12128): Elaborating entity "altsyncram" for hierarchy "Score_RAM:ScoreRAMModule|altsyncram:altsyncram_component" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/Score_RAM.v Line: 86
+Info (12130): Elaborated megafunction instantiation "Score_RAM:ScoreRAMModule|altsyncram:altsyncram_component" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/Score_RAM.v Line: 86
+Info (12133): Instantiated megafunction "Score_RAM:ScoreRAMModule|altsyncram:altsyncram_component" with the following parameter: File: C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/Score_RAM.v Line: 86
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "Score_RAM.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "32"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "DONT_CARE"
+    Info (12134): Parameter "widthad_a" = "5"
+    Info (12134): Parameter "width_a" = "8"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_1sm1.tdf
+    Info (12023): Found entity 1: altsyncram_1sm1 File: C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/db/altsyncram_1sm1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_1sm1" for hierarchy "Score_RAM:ScoreRAMModule|altsyncram:altsyncram_component|altsyncram_1sm1:auto_generated" File: c:/altera_lite/25.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "DisplayController" for hierarchy "DisplayController:DisplayModule" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/FinalProject_PrimeNumGuessingGame.v Line: 354
+Info (12128): Elaborating entity "My7SegmentDecoder_4To7" for hierarchy "My7SegmentDecoder_4To7:TimerTensDisplayModule" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/FinalProject_PrimeNumGuessingGame.v Line: 362
+Info (12128): Elaborating entity "Hint7SegmentDecoder" for hierarchy "Hint7SegmentDecoder:HintDisplayModule" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/FinalProject_PrimeNumGuessingGame.v Line: 388
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDs[2]" is stuck at GND File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/FinalProject_PrimeNumGuessingGame.v Line: 23
+    Warning (13410): Pin "LEDs[6]" is stuck at GND File: C:/ADD_Projects/FinalProject_PrimeNumGuess/src/FinalProject_PrimeNumGuessingGame.v Line: 23
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 23 registers lost all their fanouts during netlist optimizations.
+Info (17036): Removed 2 MSB VCC or GND address nodes from RAM block "Authentication:AuthenticationModule|Password_ROM:DUT_Password_ROM|altsyncram:altsyncram_component|altsyncram_c3g1:auto_generated|ALTSYNCRAM" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/db/altsyncram_c3g1.tdf Line: 32
+Info (17036): Removed 2 MSB VCC or GND address nodes from RAM block "Authentication:AuthenticationModule|PlayerID_ROM:DUT_PlayerID_ROM|altsyncram:altsyncram_component|altsyncram_k2g1:auto_generated|ALTSYNCRAM" File: C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/db/altsyncram_k2g1.tdf Line: 32
+Info (144001): Generated suppressed messages file C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/output_files/FinalProject_PrimeNumGuessingGame.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 727 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 13 input pins
+    Info (21059): Implemented 54 output pins
+    Info (21061): Implemented 604 logic cells
+    Info (21064): Implemented 56 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4921 megabytes
+    Info: Processing ended: Mon May 11 15:21:28 2026
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:15
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/output_files/FinalProject_PrimeNumGuessingGame.map.smsg.
+
+

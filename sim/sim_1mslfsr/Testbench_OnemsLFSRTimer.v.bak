@@ -1,0 +1,68 @@
+// ECE6370
+// Author: Dharani Kandhalam - 1389
+// Name of Module: testbench_msecTimer_LFSR_compare
+// Description: This testbench simulates the regular 1 ms timer and the
+// final LFSR-based 1 ms timer side by side and verifies that both generate
+// single-cycle timeout pulses at the same time.
+// Comments/Log: Second run for exact timing comparison.
+
+module testbench_msecLFSRTimer;
+
+reg clk, rst, enable;
+wire timeout_old1ms;
+wire timeout_lfsr1ms;
+wire [15:0] lfsr_q;
+
+msecTimer DUT_old1ms (
+    .enable(enable),
+    .clk(clk),
+    .rst(rst),
+    .msecTimeOut(timeout_old1ms)
+);
+
+msecTimer_LFSR DUT_lfsr1ms (
+    .enable(enable),
+    .clk(clk),
+    .rst(rst),
+    .msecTimeOut(timeout_lfsr1ms),
+    .q(lfsr_q)
+);
+
+always begin
+    clk = 1'b0; #10;
+    clk = 1'b1; #10;
+end
+
+integer pulse_count;
+
+initial begin
+    rst = 1'b0;
+    enable = 1'b0;
+    pulse_count = 0;
+
+    #25;
+    rst = 1'b1;
+    enable = 1'b1;
+
+    #2500000;
+    $stop;
+end
+
+always @(posedge clk) begin
+    if (timeout_old1ms && timeout_lfsr1ms) begin
+        pulse_count = pulse_count + 1;
+        $display("Matched timeout pulse %0d at time=%0t", pulse_count, $time);
+
+        if (pulse_count == 2) begin
+            $display("PASS: both timers matched for two full cycles.");
+            $stop;
+        end
+    end
+
+    if (timeout_old1ms ^ timeout_lfsr1ms) begin
+        $display("ERROR: timeout mismatch at time=%0t", $time);
+        $stop;
+    end
+end
+
+endmodule

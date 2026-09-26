@@ -1,0 +1,103 @@
+# Compile of OnemsLFSRTimer.v was successful.
+# Compile of Testbench_OnemsLFSRTerminalValue.v was successful.
+# Compile of msecTimer.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.testbench_msecTimer_LFSR_findTerminal
+# vsim -gui work.testbench_msecTimer_LFSR_findTerminal 
+# Start time: 14:19:06 on Apr 05,2026
+# Loading work.testbench_msecTimer_LFSR_findTerminal
+# Loading work.msecTimer
+# Loading work.msecTimer_LFSR_findTerminal
+add wave -r /*
+run -all
+# Regular 1ms pulse 1 at time=1000030, LFSR state = b11f
+# Regular 1ms pulse 2 at time=2000030, LFSR state = d967
+# ** Note: $stop    : C:/ADD_Projects/Lab4_KANDHALAM_Dharani/sim_1mslfsr/Testbench_OnemsLFSRTerminalValue.v(47)
+#    Time: 2000030 ps  Iteration: 1  Instance: /testbench_msecTimer_LFSR_findTerminal
+# Break in Module testbench_msecTimer_LFSR_findTerminal at C:/ADD_Projects/Lab4_KANDHALAM_Dharani/sim_1mslfsr/Testbench_OnemsLFSRTerminalValue.v line 47
+# Compile of OnemsLFSRTimer.v was successful.
+# Compile of Testbench_OnemsLFSRTerminalValue.v was successful.
+# Compile of msecTimer.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.testbench_msecTimer_LFSR_findTerminal
+# End time: 14:27:19 on Apr 05,2026, Elapsed time: 0:08:13
+# Errors: 0, Warnings: 11
+# vsim -gui work.testbench_msecTimer_LFSR_findTerminal 
+# Start time: 14:27:19 on Apr 05,2026
+# Loading work.testbench_msecTimer_LFSR_findTerminal
+# Loading work.msecTimer
+# Loading work.msecTimer_LFSR_findTerminal
+add wave -r /*
+run -all
+# Regular 1ms pulse 1 at time=10000300, LFSR state = b11f
+# Regular 1ms pulse 2 at time=20000300, LFSR state = d967
+# ** Note: $stop    : C:/ADD_Projects/Lab4_KANDHALAM_Dharani/sim_1mslfsr/Testbench_OnemsLFSRTerminalValue.v(47)
+#    Time: 2000030 ns  Iteration: 1  Instance: /testbench_msecTimer_LFSR_findTerminal
+# Break in Module testbench_msecTimer_LFSR_findTerminal at C:/ADD_Projects/Lab4_KANDHALAM_Dharani/sim_1mslfsr/Testbench_OnemsLFSRTerminalValue.v line 47
+# Compile of OnemsLFSRTimer.v was successful.
+# Compile of Testbench_OnemsLFSRTerminalValue.v was successful.
+# Compile of msecTimer.v was successful.
+# Compile of Testbench_OnemsLFSRTimer.v was successful.
+# 4 compiles, 0 failed with no errors.
+# Load canceled
+# Compile of OnemsLFSRTimer.v was successful.
+# Compile of Testbench_OnemsLFSRTerminalValue.v was successful.
+# Compile of msecTimer.v was successful.
+# Compile of Testbench_OnemsLFSRTimer.v was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.testbench_msecLFSRTimer
+# End time: 15:05:42 on Apr 05,2026, Elapsed time: 0:38:23
+# Errors: 0, Warnings: 4
+# vsim -gui work.testbench_msecLFSRTimer 
+# Start time: 15:05:42 on Apr 05,2026
+# Loading work.testbench_msecLFSRTimer
+# Loading work.msecTimer
+# Loading work.msecTimer_LFSR
+add wave -r /*
+run -all
+# ERROR: timeout mismatch at time=1000030
+# ** Note: $stop    : C:/ADD_Projects/Lab4_KANDHALAM_Dharani/sim_1mslfsr/Testbench_OnemsLFSRTimer.v(64)
+#    Time: 1000030 ps  Iteration: 1  Instance: /testbench_msecLFSRTimer
+# Break in Module testbench_msecLFSRTimer at C:/ADD_Projects/Lab4_KANDHALAM_Dharani/sim_1mslfsr/Testbench_OnemsLFSRTimer.v line 64
+# Compile of OnemsLFSRTimer.v was successful.
+# Compile of Testbench_OnemsLFSRTerminalValue.v was successful.
+# Compile of msecTimer.v was successful.
+# Compile of Testbench_OnemsLFSRTimer.v was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.testbench_msecLFSRTimer
+# End time: 15:36:53 on Apr 05,2026, Elapsed time: 0:31:11
+# Errors: 0, Warnings: 2
+# vsim -gui work.testbench_msecLFSRTimer 
+# Start time: 15:36:53 on Apr 05,2026
+# Loading work.testbench_msecLFSRTimer
+# Loading work.msecTimer
+# Loading work.msecTimer_LFSR
+add wave -r /*
+run -all
+# Matched timeout pulse 1 at time=1000030
+# Matched timeout pulse 2 at time=2000030
+# PASS: both timers matched for two full cycles.
+# ** Note: $stop    : C:/ADD_Projects/Lab4_KANDHALAM_Dharani/sim_1mslfsr/Testbench_OnemsLFSRTimer.v(58)
+#    Time: 2000030 ps  Iteration: 1  Instance: /testbench_msecLFSRTimer
+# Break in Module testbench_msecLFSRTimer at C:/ADD_Projects/Lab4_KANDHALAM_Dharani/sim_1mslfsr/Testbench_OnemsLFSRTimer.v line 58
+# Compile of OnemsLFSRTimer.v was successful.
+# Compile of Testbench_OnemsLFSRTerminalValue.v was successful.
+# Compile of msecTimer.v was successful.
+# Compile of Testbench_OnemsLFSRTimer.v was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.testbench_msecLFSRTimer
+# End time: 15:48:38 on Apr 05,2026, Elapsed time: 0:11:45
+# Errors: 0, Warnings: 2
+# vsim -gui work.testbench_msecLFSRTimer 
+# Start time: 15:48:38 on Apr 05,2026
+# Loading work.testbench_msecLFSRTimer
+# Loading work.msecTimer
+# Loading work.msecTimer_LFSR
+add wave -r /*
+run -all
+# Matched timeout pulse 1 at time=1000030
+# Matched timeout pulse 2 at time=2000030
+# PASS: both timers matched for two full cycles.
+# ** Note: $stop    : C:/ADD_Projects/Lab4_KANDHALAM_Dharani/sim_1mslfsr/Testbench_OnemsLFSRTimer.v(60)
+#    Time: 2000070 ps  Iteration: 1  Instance: /testbench_msecLFSRTimer
+# Break in Module testbench_msecLFSRTimer at C:/ADD_Projects/Lab4_KANDHALAM_Dharani/sim_1mslfsr/Testbench_OnemsLFSRTimer.v line 60

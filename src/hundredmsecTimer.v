@@ -1,0 +1,28 @@
+module hundredmsecTimer(enable, clk, rst, hundredmsecTimeOut);
+
+input enable, clk, rst;
+output hundredmsecTimeOut;
+
+reg hundredmsecTimeOut;
+reg [6:0] count;
+
+always @(posedge clk) begin
+    if (rst == 1'b0) begin
+        count <= 0;
+        hundredmsecTimeOut <= 0;
+    end
+    else if (enable == 1'b1) begin
+        if (count == 7'd99) begin
+            count <= 0;
+            hundredmsecTimeOut <= 1;
+        end
+        else begin
+            count <= count + 1;
+            hundredmsecTimeOut <= 0;
+        end
+    end
+    else
+        hundredmsecTimeOut <= 0;
+end
+
+endmodule

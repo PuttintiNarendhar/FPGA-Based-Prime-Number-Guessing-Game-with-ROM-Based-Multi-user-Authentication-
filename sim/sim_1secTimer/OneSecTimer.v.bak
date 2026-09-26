@@ -1,0 +1,54 @@
+module OneSecTimer( enable, clk, rst, OneSecTimeout);
+    input enable, clk, rst;
+    output OneSecTimeout;
+	
+	reg OneSecTimeout;
+	reg [15:0] ms_count;          // counts 0 → 49999 (1 ms)
+	reg [6:0] hundred_ms_count;   // counts 0 → 99   (100 ms)
+	reg [3:0] sec_count;          // counts 0 → 9    (1 second)
+
+	always @(posedge clk) begin
+		if (rst == 1'b0) begin
+			ms_count <= 0;
+			hundred_ms_count <= 0;
+			sec_count <= 0;
+			OneSecTimeout <= 0;
+		end
+		else if (enable == 1'b1) begin
+
+			// 50 MHz clock → 50,000 cycles = 1 ms, so count from 0 to 49,999
+			if (ms_count == 16'd49999) begin
+				ms_count <= 0;
+
+				// 100 × 1 ms = 100 ms, counter runs from 0 to 99
+				if (hundred_ms_count == 7'd99) begin
+					hundred_ms_count <= 0;
+
+					// 10 × 100 ms = 1 second, counter runs from 0 to 9
+					if (sec_count == 4'd9) begin
+						sec_count <= 0;
+						OneSecTimeout <= 1;   // 1 second pulse
+					end
+					else begin
+						sec_count <= sec_count + 1;
+						OneSecTimeout <= 0;
+					end
+
+				end
+				else begin
+					hundred_ms_count <= hundred_ms_count + 1;
+					OneSecTimeout <= 0;
+				end
+
+			end
+			else begin
+				ms_count <= ms_count + 1;
+				OneSecTimeout <= 0;
+			end
+
+		end
+		else
+			OneSecTimeout <= 0;
+	end
+
+endmodule

@@ -1,0 +1,127 @@
+`timescale 1 ns/100 ps
+module testbench_twoDigitTimer();
+
+	reg clk, rst;
+	reg Timer_enable, Timer_reconfig;
+	wire [3:0] Tensdigit, Onesdigit;
+	wire TimeOut;
+
+	//clock
+	always
+		begin
+			clk = 1'b0;
+			#10;
+			clk = 1'b1;
+			#10;
+		end
+
+	TwoDigitTimer DUT_MyTwoDigitTimer(Tensdigit, Onesdigit, TimeOut, Timer_enable, Timer_reconfig, clk, rst);
+
+	initial
+		begin
+			rst = 1'b1;
+			Timer_reconfig = 1'b0;
+			Timer_enable = 1'b0;
+
+			@(posedge clk);
+			@(posedge clk);
+
+			//Reset
+			#5 rst = 1'b0;
+			@(posedge clk);
+			@(posedge clk);
+			@(posedge clk);
+			@(posedge clk);
+
+			//release reset
+			#5 rst = 1'b1;
+			@(posedge clk);
+			@(posedge clk);
+
+			//reconfigure timer to 99
+			#5 Timer_reconfig = 1'b1;
+			@(posedge clk);
+			#5 Timer_reconfig = 1'b0;
+			@(posedge clk);
+			@(posedge clk);
+
+			//99 to 98
+			#5 Timer_enable = 1'b1;
+			@(posedge clk);
+			#5 Timer_enable = 1'b0;
+			@(posedge clk);
+
+			//98 to 97
+			#5 Timer_enable = 1'b1;
+			@(posedge clk);
+			#5 Timer_enable = 1'b0;
+			@(posedge clk);
+
+			//97 to 96
+			#5 Timer_enable = 1'b1;
+			@(posedge clk);
+			#5 Timer_enable = 1'b0;
+			@(posedge clk);
+
+			//96 to 95
+			#5 Timer_enable = 1'b1;
+			@(posedge clk);
+			#5 Timer_enable = 1'b0;
+			@(posedge clk);
+
+			//95 to 94
+			#5 Timer_enable = 1'b1;
+			@(posedge clk);
+			#5 Timer_enable = 1'b0;
+			@(posedge clk);
+
+			//94 to 93
+			#5 Timer_enable = 1'b1;
+			@(posedge clk);
+			#5 Timer_enable = 1'b0;
+			@(posedge clk);
+
+			//93 to 92
+			#5 Timer_enable = 1'b1;
+			@(posedge clk);
+			#5 Timer_enable = 1'b0;
+			@(posedge clk);
+
+			//92 to 91
+			#5 Timer_enable = 1'b1;
+			@(posedge clk);
+			#5 Timer_enable = 1'b0;
+			@(posedge clk);
+
+			//91 to 90
+			#5 Timer_enable = 1'b1;
+			@(posedge clk);
+			#5 Timer_enable = 1'b0;
+			@(posedge clk);
+
+			//90 to 89 rollover check
+			#5 Timer_enable = 1'b1;
+			@(posedge clk);
+			#5 Timer_enable = 1'b0;
+			@(posedge clk);
+
+			//few more counts
+			#5 Timer_enable = 1'b1;
+			@(posedge clk);
+			#5 Timer_enable = 1'b0;
+			@(posedge clk);
+
+			#5 Timer_enable = 1'b1;
+			@(posedge clk);
+			#5 Timer_enable = 1'b0;
+			@(posedge clk);
+
+			#5 Timer_enable = 1'b1;
+			@(posedge clk);
+			#5 Timer_enable = 1'b0;
+			@(posedge clk);
+
+			$stop;
+		end
+
+endmodule

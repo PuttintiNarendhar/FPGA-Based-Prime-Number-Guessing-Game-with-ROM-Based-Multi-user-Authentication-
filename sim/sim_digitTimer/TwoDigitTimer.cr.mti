@@ -1,0 +1,22 @@
+C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_digitTimer/testbench_TwoDigitTimer.v {1 {vlog -work work -stats=none C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_digitTimer/testbench_TwoDigitTimer.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module testbench_twoDigitTimer
+
+Top level modules:
+	testbench_twoDigitTimer
+
+} {} {}} C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_digitTimer/TwoDigitTimer.v {1 {vlog -work work -stats=none C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_digitTimer/TwoDigitTimer.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module TwoDigitTimer
+
+Top level modules:
+	TwoDigitTimer
+
+} {} {}} C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_digitTimer/OneDigitTimer.v {1 {vlog -work work -stats=none C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_digitTimer/OneDigitTimer.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module OneDigitTimer
+
+Top level modules:
+	OneDigitTimer
+
+} {} {}}

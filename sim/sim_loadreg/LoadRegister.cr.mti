@@ -1,0 +1,15 @@
+C:/ADD_Projects/Lab2_KANDHALAM_Dharani/sim_loadreg/testbench_LoadRegister.v {1 {vlog -work work -stats=none C:/ADD_Projects/Lab2_KANDHALAM_Dharani/sim_loadreg/testbench_LoadRegister.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module testbench_LoadRegister
+
+Top level modules:
+	testbench_LoadRegister
+
+} {} {}} C:/ADD_Projects/Lab2_KANDHALAM_Dharani/sim_loadreg/LoadRegister.v {1 {vlog -work work -stats=none {C:\ADD_Projects\Lab2_KANDHALAM_Dharani\sim_loadreg\LoadRegister.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module LoadRegister
+
+Top level modules:
+	LoadRegister
+
+} {} {}}

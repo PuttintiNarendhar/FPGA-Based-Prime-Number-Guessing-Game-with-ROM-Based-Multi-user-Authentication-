@@ -1,0 +1,15 @@
+C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_rng/testbench_RandomNumberGenerator.v {1 {vlog -work work -stats=none C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_rng/testbench_RandomNumberGenerator.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module testbench_RandomNumberGenerator
+
+Top level modules:
+	testbench_RandomNumberGenerator
+
+} {} {}} C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_rng/RandomNumberGenerator.v {1 {vlog -work work -stats=none C:/ADD_Projects/Lab3_KANDHALAM_Dharani/sim_rng/RandomNumberGenerator.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RandomNumberGenerator
+
+Top level modules:
+	RandomNumberGenerator
+
+} {} {}}

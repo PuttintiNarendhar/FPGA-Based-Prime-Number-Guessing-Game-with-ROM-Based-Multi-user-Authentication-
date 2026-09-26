@@ -1,0 +1,17 @@
+# Compile of AccessController.v was successful.
+# Compile of testbench_AccessController.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.testbench_AccessControl
+# vsim -gui work.testbench_AccessControl 
+# Start time: 16:46:08 on Feb 26,2026
+# Loading work.testbench_AccessControl
+# Loading work.AccessControl_OneProcedure
+add wave -r /*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: dhara  Hostname: DHARANIRAJ  ProcessID: 27256
+#           Attempting to use alternate WLF file "./wlftnz8qm6".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftnz8qm6
+run 800ns
+# End time: 19:00:44 on Feb 26,2026, Elapsed time: 2:14:36
+# Errors: 0, Warnings: 4

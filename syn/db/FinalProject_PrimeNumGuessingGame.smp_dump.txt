@@ -1,0 +1,83 @@
+
+State Machine - |FinalProject_PrimeNumGuessingGame|ScoreTracking:ScoreTrackingModule|State
+Name State.WRITE_PERSONAL State.COMPARE_PERSONAL State.RAMCATCH State.RAMCYCLE2 State.RAMCYCLE1 State.FETCHRAM State.WAITFORSCORE State.RAMINIT State.CHECK_GLOBAL 
+State.RAMINIT 0 0 0 0 0 0 0 0 0 
+State.WAITFORSCORE 0 0 0 0 0 0 1 1 0 
+State.FETCHRAM 0 0 0 0 0 1 0 1 0 
+State.RAMCYCLE1 0 0 0 0 1 0 0 1 0 
+State.RAMCYCLE2 0 0 0 1 0 0 0 1 0 
+State.RAMCATCH 0 0 1 0 0 0 0 1 0 
+State.COMPARE_PERSONAL 0 1 0 0 0 0 0 1 0 
+State.WRITE_PERSONAL 1 0 0 0 0 0 0 1 0 
+State.CHECK_GLOBAL 0 0 0 0 0 0 0 1 1 
+
+State Machine - |FinalProject_PrimeNumGuessingGame|PrimeGameController:GameControllerModule|state
+Name state.SHOW_WINNER_STATUS state.WAIT_SCORE_VALID state.LOGOUT state.GAME_OVER state.WAIT_TARGET_ROUND state.NEW_ROUND state.CORRECT_SHOW state.ACTIVE state.SHOW_GO state.WAIT_TARGET_START state.START_GAME state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 
+state.START_GAME 0 0 0 0 0 0 0 0 0 0 1 1 
+state.WAIT_TARGET_START 0 0 0 0 0 0 0 0 0 1 0 1 
+state.SHOW_GO 0 0 0 0 0 0 0 0 1 0 0 1 
+state.ACTIVE 0 0 0 0 0 0 0 1 0 0 0 1 
+state.CORRECT_SHOW 0 0 0 0 0 0 1 0 0 0 0 1 
+state.NEW_ROUND 0 0 0 0 0 1 0 0 0 0 0 1 
+state.WAIT_TARGET_ROUND 0 0 0 0 1 0 0 0 0 0 0 1 
+state.GAME_OVER 0 0 0 1 0 0 0 0 0 0 0 1 
+state.LOGOUT 0 0 1 0 0 0 0 0 0 0 0 1 
+state.WAIT_SCORE_VALID 0 1 0 0 0 0 0 0 0 0 0 1 
+state.SHOW_WINNER_STATUS 1 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |FinalProject_PrimeNumGuessingGame|PrimeTargetGenerator:TargetGeneratorModule|state
+Name state.ROM_CYC2 state.ROM_CYC1 state.FETCH_ROM_ADDR state.IDLE state.ROM_CATCH 
+state.IDLE 0 0 0 0 0 
+state.FETCH_ROM_ADDR 0 0 1 1 0 
+state.ROM_CYC1 0 1 0 1 0 
+state.ROM_CYC2 1 0 0 1 0 
+state.ROM_CATCH 0 0 0 1 1 
+
+State Machine - |FinalProject_PrimeNumGuessingGame|Authentication:AuthenticationModule|Password_Checking_Module:DUT_Password_Checking_Module|State
+Name State.WAITCYCLE State.PASSED State.COMPARE State.ROMCATCH State.ROMCYC2 State.ROMCYC1 State.FETCHROMWD State.DIGIT6 State.DIGIT5 State.DIGIT4 State.DIGIT3 State.DIGIT2 State.DIGIT1 
+State.DIGIT1 0 0 0 0 0 0 0 0 0 0 0 0 0 
+State.DIGIT2 0 0 0 0 0 0 0 0 0 0 0 1 1 
+State.DIGIT3 0 0 0 0 0 0 0 0 0 0 1 0 1 
+State.DIGIT4 0 0 0 0 0 0 0 0 0 1 0 0 1 
+State.DIGIT5 0 0 0 0 0 0 0 0 1 0 0 0 1 
+State.DIGIT6 0 0 0 0 0 0 0 1 0 0 0 0 1 
+State.FETCHROMWD 0 0 0 0 0 0 1 0 0 0 0 0 1 
+State.ROMCYC1 0 0 0 0 0 1 0 0 0 0 0 0 1 
+State.ROMCYC2 0 0 0 0 1 0 0 0 0 0 0 0 1 
+State.ROMCATCH 0 0 0 1 0 0 0 0 0 0 0 0 1 
+State.COMPARE 0 0 1 0 0 0 0 0 0 0 0 0 1 
+State.PASSED 0 1 0 0 0 0 0 0 0 0 0 0 1 
+State.WAITCYCLE 1 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |FinalProject_PrimeNumGuessingGame|Authentication:AuthenticationModule|ID_Checking_Module:DUT_ID_Checking_Module|State
+Name State.CHECKGUEST State.CHECKSTATUS State.COMPARE State.ROMCATCH State.ROMCYC2 State.ROMCYC1 State.FETCHROMWD State.DIGIT4 State.DIGIT3 State.DIGIT2 State.DIGIT1 
+State.DIGIT1 0 0 0 0 0 0 0 0 0 0 0 
+State.DIGIT2 0 0 0 0 0 0 0 0 0 1 1 
+State.DIGIT3 0 0 0 0 0 0 0 0 1 0 1 
+State.DIGIT4 0 0 0 0 0 0 0 1 0 0 1 
+State.FETCHROMWD 0 0 0 0 0 0 1 0 0 0 1 
+State.ROMCYC1 0 0 0 0 0 1 0 0 0 0 1 
+State.ROMCYC2 0 0 0 0 1 0 0 0 0 0 1 
+State.ROMCATCH 0 0 0 1 0 0 0 0 0 0 1 
+State.COMPARE 0 0 1 0 0 0 0 0 0 0 1 
+State.CHECKSTATUS 0 1 0 0 0 0 0 0 0 0 1 
+State.CHECKGUEST 1 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |FinalProject_PrimeNumGuessingGame|ButtonShaper:LevelButtonShaper|State
+Name State.INIT State.WAIT State.PULSE 
+State.INIT 0 0 0 
+State.PULSE 1 0 1 
+State.WAIT 1 1 0 
+
+State Machine - |FinalProject_PrimeNumGuessingGame|ButtonShaper:PlayerLoadButtonShaper|State
+Name State.INIT State.WAIT State.PULSE 
+State.INIT 0 0 0 
+State.PULSE 1 0 1 
+State.WAIT 1 1 0 
+
+State Machine - |FinalProject_PrimeNumGuessingGame|ButtonShaper:StartButtonShaper|State
+Name State.INIT State.WAIT State.PULSE 
+State.INIT 0 0 0 
+State.PULSE 1 0 1 
+State.WAIT 1 1 0 

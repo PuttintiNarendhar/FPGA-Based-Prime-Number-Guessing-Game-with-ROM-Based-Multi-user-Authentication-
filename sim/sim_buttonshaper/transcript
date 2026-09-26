@@ -1,0 +1,13 @@
+# Compile of ButtonShaper.v was successful.
+# Compile of testbench_ButtonShaper.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.testbench_ButtonShaper
+# vsim -gui work.testbench_ButtonShaper 
+# Start time: 19:49:46 on Feb 16,2026
+# Loading work.testbench_ButtonShaper
+# Loading work.ButtonShaper
+add wave -r /*
+run 300ns
+run 100ns
+# End time: 20:21:19 on Feb 17,2026, Elapsed time: 24:31:33
+# Errors: 0, Warnings: 6

@@ -1,0 +1,165 @@
+Archive Project report for FinalProject_PrimeNumGuessingGame
+Tue May 12 00:15:09 2026
+Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Archive Project Summary
+  3. Archive Project Messages
+  4. Files Archived
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++----------------------------------------------------------------+
+; Archive Project Summary                                        ;
++------------------------+---------------------------------------+
+; Archive Project Status ; Successful - Tue May 12 00:15:09 2026 ;
+; Revision Name          ; FinalProject_PrimeNumGuessingGame     ;
+; Top-level Entity Name  ; FinalProject_PrimeNumGuessingGame     ;
+; Family                 ; Cyclone V                             ;
++------------------------+---------------------------------------+
+
+
++--------------------------+
+; Archive Project Messages ;
++--------------------------+
+Info: File Set 'Source control' contains:
+    Info: Project source and settings files
+    Info: Automatically detected source files
+Warning: Hierarchical Platform Designer systems and custom IP components(_hw.tcl and associated files) are not archived by the Quartus Archiver
+Info: Archive will store files relative to the closest common parent directory
+Info (13213): Using common directory C:/ADD_Projects/FinalProject_PrimeNumGuess/
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated archive 'C:/ADD_Projects/FinalProject_PrimeNumGuess/syn/FinalProject_PrimeNumGuessingGame.qar'
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated report 'FinalProject_PrimeNumGuessingGame.archive.rpt'
+Info (23030): Evaluation of Tcl script c:/altera_lite/25.1std/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4875 megabytes
+    Info: Processing ended: Tue May 12 00:15:09 2026
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+
++------------------------------------------------------------------------------------+
+; Files Archived                                                                     ;
++------------------------------------------------------------------------------------+
+; File Name                                                                          ;
++------------------------------------------------------------------------------------+
+; ../src/AccessController.v                                                          ;
+; ../src/Authentication.v                                                            ;
+; ../src/ButtonShaper.v                                                              ;
+; ../src/countTo10Timer.v                                                            ;
+; ../src/DisplayController.v                                                         ;
+; ../src/FinalProject_PrimeNumGuessingGame.v                                         ;
+; ../src/Hint7SegmentDecoder.v                                                       ;
+; ../src/hundredmsecTimer.v                                                          ;
+; ../src/ID_Checking_Module.v                                                        ;
+; ../src/LevelSelector.v                                                             ;
+; ../src/LoadRegister.v                                                              ;
+; ../src/msecTimer.v                                                                 ;
+; ../src/My4BAdder.v                                                                 ;
+; ../src/My7SegmentDisplay.v                                                         ;
+; ../src/OneDigitTimer.v                                                             ;
+; ../src/OnemsLFSRTimer.v                                                            ;
+; ../src/OneSecTimer.v                                                               ;
+; ../src/Password_Checking_Module.v                                                  ;
+; ../src/PlayerModule.v                                                              ;
+; ../src/PrimeChecker.v                                                              ;
+; ../src/PrimeGameController.v                                                       ;
+; ../src/PrimeLFSR.v                                                                 ;
+; ../src/PrimeTargetGenerator.v                                                      ;
+; ../src/RandomIndexLFSR.v                                                           ;
+; ../src/RandomNumberGenerator.v                                                     ;
+; ../src/ROMAuthentication.v                                                         ;
+; ../src/ScoreBoardModule.v                                                          ;
+; ../src/ScoreTracking.v                                                             ;
+; ../src/ThreeDigitTimer.v                                                           ;
+; ../src/TwoDigitGuessInput.v                                                        ;
+; ../src/TwoDigitTimer.v                                                             ;
+; ../src/VerificationModule.v                                                        ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/AccessController.v                  ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/Authentication.v                    ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/ButtonShaper.v                      ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/countTo10Timer.v                    ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/DisplayController.v                 ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/FinalProject_PrimeNumGuessingGame.v ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/Hint7SegmentDecoder.v               ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/hundredmsecTimer.v                  ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/ID_Checking_Module.v                ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/LevelSelector.v                     ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/LoadRegister.v                      ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/msecTimer.v                         ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/My4BAdder.v                         ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/My7SegmentDisplay.v                 ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/OneDigitTimer.v                     ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/OnemsLFSRTimer.v                    ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/OneSecTimer.v                       ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/Password_Checking_Module.v          ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/PlayerModule.v                      ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/PrimeChecker.v                      ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/PrimeGameController.v               ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/PrimeLFSR.v                         ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/PrimeTargetGenerator.v              ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/RandomIndexLFSR.v                   ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/RandomNumberGenerator.v             ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/ROMAuthentication.v                 ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/ScoreBoardModule.v                  ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/ScoreTracking.v                     ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/ThreeDigitTimer.v                   ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/TwoDigitGuessInput.v                ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/TwoDigitTimer.v                     ;
+; C:/ADD_Projects/FinalProject_PrimeNumGuess/src/VerificationModule.v                ;
+; c:/altera_lite/25.1std/quartus/bin64/assignment_defaults.qdf                       ;
+; FinalProject_PrimeNumGuessingGame.hex                                              ;
+; FinalProject_PrimeNumGuessingGame.mif                                              ;
+; FinalProject_PrimeNumGuessingGame.qpf                                              ;
+; FinalProject_PrimeNumGuessingGame.qsf                                              ;
+; password_rom.hex                                                                   ;
+; Password_ROM.qip                                                                   ;
+; Password_ROM.v                                                                     ;
+; playerid_rom.hex                                                                   ;
+; PlayerID_ROM.qip                                                                   ;
+; PlayerID_ROM.v                                                                     ;
+; PrimerNumbersROM.qip                                                               ;
+; PrimerNumbersROM.v                                                                 ;
+; PrimerNumbersROM_bb.v                                                              ;
+; rom_primenumbers.mif                                                               ;
+; ROM_PrimerNumbers.qip                                                              ;
+; ROM_PrimerNumbers.v                                                                ;
+; ROM_PrimerNumbers_bb.v                                                             ;
+; ROM_PSWD.qip                                                                       ;
+; ROM_PSWD.v                                                                         ;
+; ROM_PSWD_bb.v                                                                      ;
+; score_ram.mif                                                                      ;
+; Score_RAM.qip                                                                      ;
+; Score_RAM.v                                                                        ;
+; Score_RAM_bb.v                                                                     ;
++------------------------------------------------------------------------------------+
+
+

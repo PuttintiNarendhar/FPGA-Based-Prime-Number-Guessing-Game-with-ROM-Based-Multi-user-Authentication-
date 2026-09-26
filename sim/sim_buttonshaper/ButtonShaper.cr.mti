@@ -1,0 +1,15 @@
+C:/ADD_Projects/Lab2_KANDHALAM_Dharani/sim_buttonshaper/ButtonShaper.v {1 {vlog -work work -stats=none C:/ADD_Projects/Lab2_KANDHALAM_Dharani/sim_buttonshaper/ButtonShaper.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ButtonShaper
+
+Top level modules:
+	ButtonShaper
+
+} {} {}} C:/ADD_Projects/Lab2_KANDHALAM_Dharani/sim_buttonshaper/testbench_ButtonShaper.v {1 {vlog -work work -stats=none C:/ADD_Projects/Lab2_KANDHALAM_Dharani/sim_buttonshaper/testbench_ButtonShaper.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module testbench_ButtonShaper
+
+Top level modules:
+	testbench_ButtonShaper
+
+} {} {}}

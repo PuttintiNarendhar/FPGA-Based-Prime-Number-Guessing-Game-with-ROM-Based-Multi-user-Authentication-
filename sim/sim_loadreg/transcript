@@ -1,0 +1,47 @@
+vmap -c
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap -c 
+# Copying C:/IntelFPGA/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# ** Warning: Copied C:/IntelFPGA/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini.
+# Compile of LoadRegister.v failed with 1 errors.
+# Compile of testbench_LoadRegister.v was successful.
+# 2 compiles, 1 failed with 1 error.
+# Compile of LoadRegister.v failed with 1 errors.
+# Compile of testbench_LoadRegister.v was successful.
+# 2 compiles, 1 failed with 1 error.
+# Compile of LoadRegister.v was successful.
+# Compile of testbench_LoadRegister.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.testbench_LoadRegister
+# vsim -gui work.testbench_LoadRegister 
+# Start time: 20:42:42 on Feb 15,2026
+# Loading work.testbench_LoadRegister
+# Loading work.LoadRegister
+# ** Error (suppressible): (vsim-3053) Illegal output or inout port connection for port 'Reg_Output'.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench_LoadRegister/DUT_MyLoadRegister1 File: C:/ADD_Projects/Lab2_KANDHALAM_Dharani/sim_loadreg/testbench_LoadRegister.v Line: 17
+# Error loading design
+# End time: 20:42:43 on Feb 15,2026, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 5
+# Compile of LoadRegister.v was successful.
+# Compile of testbench_LoadRegister.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.testbench_LoadRegister
+# vsim -gui work.testbench_LoadRegister 
+# Start time: 20:46:16 on Feb 15,2026
+# Loading work.testbench_LoadRegister
+# Loading work.LoadRegister
+add wave -position insertpoint wire
+# ** UI-Msg: (vish-4014) No objects found matching 'wire'.
+vsim -gui work.testbench_LoadRegister
+# End time: 20:48:20 on Feb 15,2026, Elapsed time: 0:02:04
+# Errors: 0, Warnings: 2
+# vsim -gui work.testbench_LoadRegister 
+# Start time: 20:48:20 on Feb 15,2026
+# Loading work.testbench_LoadRegister
+# Loading work.LoadRegister
+add wave -r /*
+run 200ns
+run 200ns
+run 100ns
+# End time: 18:56:41 on Feb 16,2026, Elapsed time: 22:08:21
+# Errors: 0, Warnings: 1
