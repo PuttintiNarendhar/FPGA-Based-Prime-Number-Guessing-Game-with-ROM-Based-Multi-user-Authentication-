@@ -107,4 +107,3 @@ Based on your design details, the physical peripheral mapping for the *Terasic D
 * *Synthesis Suite:* Intel Quartus Prime Lite / Standard Edition
 * *Target Device SoC:* Altera Cyclone V 5CEBA4F23C7N FPGA
 * *Hardware Design Description:* Verilog HDL / VHDL
-*
