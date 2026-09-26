@@ -1,8 +1,7 @@
 # FPGA Based Prime Number Guessing Game With ROM Based Multi User Authentication And RAM Based Score Tracking
 ### ECE6370 Advanced Digital Design
 
-*Developer:* Narendhar Puttinti  
-*UHID:* 2454090  
+*Developer:* Narendhar Puttinti    
 
 ---
 
